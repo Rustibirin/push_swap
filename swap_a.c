@@ -1,28 +1,13 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   push_swap.h                                        :+:      :+:    :+:   */
+/*   swap_a.c                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: framirez <framirez@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2026/05/26 21:58:20 by rumartin          #+#    #+#             */
-/*   Updated: 2026/05/27 16:32:06 by framirez         ###   ########.fr       */
+/*   Created: 2026/05/27 16:26:06 by framirez          #+#    #+#             */
+/*   Updated: 2026/05/27 16:30:46 by framirez         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef PUSH_SWAP_H
-# define PUSH_SWAP_H
-
-// Librerias
-# include <stdlib.h>
-# include <unistd.h>
-
-typedef struct stack
-{
-	int				*num;
-	struct stack	*next;
-	struct stack	*prev;
-}					node;
-
-// Prototipos
-#endif
+void swap_a(node )
