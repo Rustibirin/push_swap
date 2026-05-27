@@ -17,6 +17,7 @@ int	main(int argc, char **argv)
 	if (argc > 1)
 	{
 		ft_checker(argv);
+		printf("Hola");
 	}
 	return (1);
 }
