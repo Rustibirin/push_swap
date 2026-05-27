@@ -6,13 +6,13 @@
 /*   By: framirez <framirez@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/05/27 16:43:37 by framirez          #+#    #+#             */
-/*   Updated: 2026/05/27 16:48:36 by framirez         ###   ########.fr       */
+/*   Updated: 2026/05/27 16:54:53 by framirez         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-void swap_a(node **stack_a)
+void	swap_a(node **stack_a)
 {
-	
+	kdhfaosdfh
 }
