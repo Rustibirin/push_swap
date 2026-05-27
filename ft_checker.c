@@ -6,7 +6,7 @@
 /*   By: rumartin <rumartin@student.42malaga.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/05/27 16:27:26 by rumartin          #+#    #+#             */
-/*   Updated: 2026/05/27 16:28:10 by rumartin         ###   ########.fr       */
+/*   Updated: 2026/05/27 16:56:06 by rumartin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,4 +15,5 @@
 int	ft_checker(char **argv)
 {
 	return (0);
+	dkjvnlkjgnv,fcgv
 }
