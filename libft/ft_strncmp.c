@@ -1,22 +1,29 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.c                                             :+:      :+:    :+:   */
+/*   ft_strncmp.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: rumartin <rumartin@student.42malaga.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2026/05/26 21:55:21 by rumartin          #+#    #+#             */
-/*   Updated: 2026/05/27 11:03:28 by rumartin         ###   ########.fr       */
+/*   Created: 2026/04/20 17:29:46 by rumartin          #+#    #+#             */
+/*   Updated: 2026/04/27 18:36:26 by rumartin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "push_swap.h"
+#include "libft.h"
 
-int	main(int argc, char **argv)
+int	ft_strncmp(const char *s1, const char *s2, size_t n)
 {
-	if (argc > 1)
+	size_t	i;
+
+	if (n == 0)
+		return (0);
+	i = 0;
+	while (i < n)
 	{
-		ft_checker(argv);
+		if (s1[i] != s2[i] || s1[i] == '\0')
+			return ((unsigned char) s1[i] - (unsigned char) s2[i]);
+		i++;
 	}
 	return (0);
 }

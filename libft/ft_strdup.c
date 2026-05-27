@@ -1,22 +1,26 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.c                                             :+:      :+:    :+:   */
+/*   ft_strdup.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: rumartin <rumartin@student.42malaga.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2026/05/26 21:55:21 by rumartin          #+#    #+#             */
-/*   Updated: 2026/05/27 11:03:28 by rumartin         ###   ########.fr       */
+/*   Created: 2026/04/21 16:40:33 by rumartin          #+#    #+#             */
+/*   Updated: 2026/04/27 18:36:08 by rumartin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "push_swap.h"
+#include "libft.h"
 
-int	main(int argc, char **argv)
+char	*ft_strdup(const char *str)
 {
-	if (argc > 1)
-	{
-		ft_checker(argv);
-	}
-	return (0);
+	char	*cp;
+	size_t	len;
+
+	len = ft_strlen(str);
+	cp = ft_calloc ((len + 1), sizeof(char));
+	if (!cp)
+		return (NULL);
+	ft_strlcpy(cp, str, len + 1);
+	return (cp);
 }

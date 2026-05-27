@@ -1,22 +1,32 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.c                                             :+:      :+:    :+:   */
+/*   ft_memcpy.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: rumartin <rumartin@student.42malaga.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2026/05/26 21:55:21 by rumartin          #+#    #+#             */
-/*   Updated: 2026/05/27 11:03:28 by rumartin         ###   ########.fr       */
+/*   Created: 2026/04/20 16:06:24 by rumartin          #+#    #+#             */
+/*   Updated: 2026/05/01 18:22:26 by rumartin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "push_swap.h"
+#include "libft.h"
 
-int	main(int argc, char **argv)
+void	*ft_memcpy(void *dest, const void *src, size_t n)
 {
-	if (argc > 1)
+	unsigned char	*d;
+	unsigned char	*s;
+
+	if (!dest && !src)
+		return (0);
+	d = (unsigned char *) dest;
+	s = (unsigned char *) src;
+	while (n)
 	{
-		ft_checker(argv);
+		*d = *s;
+		s++;
+		d++;
+		n--;
 	}
-	return (0);
+	return (dest);
 }

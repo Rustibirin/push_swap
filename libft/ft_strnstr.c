@@ -1,22 +1,33 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.c                                             :+:      :+:    :+:   */
+/*   ft_strnstr.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: rumartin <rumartin@student.42malaga.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2026/05/26 21:55:21 by rumartin          #+#    #+#             */
-/*   Updated: 2026/05/27 11:03:28 by rumartin         ###   ########.fr       */
+/*   Created: 2026/04/20 18:18:45 by rumartin          #+#    #+#             */
+/*   Updated: 2026/05/01 23:34:08 by rumartin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "push_swap.h"
+#include "libft.h"
 
-int	main(int argc, char **argv)
+char	*ft_strnstr(const char *str, const char *to_find, size_t n)
 {
-	if (argc > 1)
+	size_t	i;
+	size_t	j;
+
+	if (to_find[0] == '\0')
+		return ((char *) str);
+	i = 0;
+	while (str[i] && (i < n))
 	{
-		ft_checker(argv);
+		j = 0;
+		while ((i + j) < n && str[i + j] == to_find[j] && to_find[j])
+			j++;
+		if (to_find[j] == '\0')
+			return ((char *) &str[i]);
+		i++;
 	}
 	return (0);
 }

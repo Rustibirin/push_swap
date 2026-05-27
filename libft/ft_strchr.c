@@ -1,22 +1,29 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.c                                             :+:      :+:    :+:   */
+/*   ft_strchr.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: rumartin <rumartin@student.42malaga.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2026/05/26 21:55:21 by rumartin          #+#    #+#             */
-/*   Updated: 2026/05/27 11:03:28 by rumartin         ###   ########.fr       */
+/*   Created: 2026/04/20 16:59:45 by rumartin          #+#    #+#             */
+/*   Updated: 2026/05/01 23:21:54 by rumartin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "push_swap.h"
+#include "libft.h"
 
-int	main(int argc, char **argv)
+char	*ft_strchr(const char *str, int c)
 {
-	if (argc > 1)
+	unsigned char	ch;
+
+	ch = (unsigned char) c;
+	while (*str)
 	{
-		ft_checker(argv);
+		if (*str == ch)
+			return ((char *) str);
+		str++;
 	}
-	return (0);
+	if (ch == '\0')
+		return ((char *) str);
+	return (NULL);
 }

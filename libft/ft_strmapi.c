@@ -1,22 +1,35 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.c                                             :+:      :+:    :+:   */
+/*   ft_strmapi.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: rumartin <rumartin@student.42malaga.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2026/05/26 21:55:21 by rumartin          #+#    #+#             */
-/*   Updated: 2026/05/27 11:03:28 by rumartin         ###   ########.fr       */
+/*   Created: 2026/04/23 13:13:08 by rumartin          #+#    #+#             */
+/*   Updated: 2026/04/27 18:36:25 by rumartin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "push_swap.h"
+#include "libft.h"
 
-int	main(int argc, char **argv)
+char	*ft_strmapi(char const *s, char (*f)(unsigned int, char))
 {
-	if (argc > 1)
+	unsigned int	i;
+	char			*res;
+	size_t			len_s;
+
+	if (!s || !f)
+		return (NULL);
+	len_s = ft_strlen(s);
+	res = ft_calloc((len_s + 1), sizeof(char));
+	if (!res)
+		return (NULL);
+	i = 0;
+	while (s[i])
 	{
-		ft_checker(argv);
+		res[i] = f(i, s[i]);
+		i++;
 	}
-	return (0);
+	res[i] = '\0';
+	return (res);
 }

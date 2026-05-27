@@ -1,22 +1,35 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.c                                             :+:      :+:    :+:   */
+/*   ft_memmove.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: rumartin <rumartin@student.42malaga.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2026/05/26 21:55:21 by rumartin          #+#    #+#             */
-/*   Updated: 2026/05/27 11:03:28 by rumartin         ###   ########.fr       */
+/*   Created: 2026/04/20 16:16:04 by rumartin          #+#    #+#             */
+/*   Updated: 2026/05/01 23:23:24 by rumartin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "push_swap.h"
+#include "libft.h"
 
-int	main(int argc, char **argv)
+void	*ft_memmove(void *dest, const void *src, size_t n)
 {
-	if (argc > 1)
+	unsigned char	*d;
+	unsigned char	*s;
+
+	d = (unsigned char *) dest;
+	s = (unsigned char *) src;
+	if (!dest && !src)
+		return (0);
+	if (d > s)
 	{
-		ft_checker(argv);
+		while (n)
+		{
+			n--;
+			d[n] = s[n];
+		}
 	}
-	return (0);
+	else
+		ft_memcpy(dest, src, n);
+	return (dest);
 }

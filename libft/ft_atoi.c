@@ -1,22 +1,36 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.c                                             :+:      :+:    :+:   */
+/*   ft_atoi.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: rumartin <rumartin@student.42malaga.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2026/05/26 21:55:21 by rumartin          #+#    #+#             */
-/*   Updated: 2026/05/27 11:03:28 by rumartin         ###   ########.fr       */
+/*   Created: 2026/04/20 11:40:56 by rumartin          #+#    #+#             */
+/*   Updated: 2026/05/01 17:56:33 by rumartin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "push_swap.h"
+#include "libft.h"
 
-int	main(int argc, char **argv)
+int	ft_atoi(const char *str)
 {
-	if (argc > 1)
+	int	number;
+	int	sign;
+
+	while (*str == ' ' || (*str >= 9 && *str <= 13))
+		str++;
+	sign = 1;
+	if (*str == '+' || *str == '-')
 	{
-		ft_checker(argv);
+		if (*str == '-')
+			sign = -sign;
+		str++;
 	}
-	return (0);
+	number = 0;
+	while (*str >= '0' && *str <= '9')
+	{
+		number = number * 10 + (*str - '0');
+		str++;
+	}
+	return (number * sign);
 }
