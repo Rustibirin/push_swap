@@ -1,28 +1,18 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   push_swap.h                                        :+:      :+:    :+:   */
+/*   ft_checker.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: rumartin <rumartin@student.42malaga.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2026/05/26 21:58:20 by rumartin          #+#    #+#             */
-/*   Updated: 2026/05/27 16:42:57 by rumartin         ###   ########.fr       */
+/*   Created: 2026/05/27 16:27:26 by rumartin          #+#    #+#             */
+/*   Updated: 2026/05/27 16:28:10 by rumartin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef PUSH_SWAP_H
-# define PUSH_SWAP_H
+#include "push_swap.h"
 
-// Librerias
-# include <stdlib.h>
-# include <unistd.h>
-
-typedef struct stack
+int	ft_checker(char **argv)
 {
-	int				*num;
-	struct stack	*next;
-	struct stack	*prev;
-}					node;
-
-// Prototipos
-#endif
+	return (0);
+}
