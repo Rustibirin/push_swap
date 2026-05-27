@@ -6,7 +6,7 @@
 /*   By: rumartin <rumartin@student.42malaga.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/05/26 21:55:21 by rumartin          #+#    #+#             */
-/*   Updated: 2026/05/27 12:14:32 by rumartin         ###   ########.fr       */
+/*   Updated: 2026/05/27 16:00:01 by rumartin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,5 +19,5 @@ int	main(int argc, char **argv)
 		ft_checker(argv);
 		printf("Hola");
 	}
-	return (1);
+	return (0);
 }
