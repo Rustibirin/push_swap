@@ -6,25 +6,24 @@
 /*   By: framirez <framirez@student.42malaga.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/05/27 21:37:35 by framirez          #+#    #+#             */
-/*   Updated: 2026/05/28 18:08:59 by framirez         ###   ########.fr       */
+/*   Updated: 2026/05/29 00:20:53 by framirez         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-void	swap(t_node **stack, int size)
+void	swap(t_node **stack)
 {
 	t_node	*a;
 	t_node	*b;
 
+	
+	if (stack == NULL || *stack == NULL || (*stack)->next == *stack)
+		return ;
 	a = *stack;
 	b = a->next;
-	if (size < 2)
-		return ;
-	else if (size == 2)
-	{
+	if (b->next == a)
 		*stack = b;
-	}
 	else
 	{
 		b->next->prev = a; // conectar C - A
@@ -38,14 +37,14 @@ void	swap(t_node **stack, int size)
 }
 void	sa(t_data *data)
 {
-	swap(&data->stack_a, data->size_a);
+	swap(&data->stack_a);
 }
 void	sb(t_data *data)
 {
-	swap(&data->stack_b, data->size_b);
+	swap(&data->stack_b);
 }
 void	ss(t_data *data)
 {
-	swap(&data->stack_a, data->size_a);
-	swap(&data->stack_b, data->size_b);
+	swap(&data->stack_a);
+	swap(&data->stack_b);
 }
