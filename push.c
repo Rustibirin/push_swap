@@ -6,19 +6,19 @@
 /*   By: framirez <framirez@student.42malaga.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/05/28 18:03:47 by framirez          #+#    #+#             */
-/*   Updated: 2026/05/28 19:52:55 by framirez         ###   ########.fr       */
+/*   Updated: 2026/05/28 20:01:31 by framirez         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-void	push(t_node **stack_1, t_node **stack_2, int size_1, int size_2)
+void	push(t_node **stack_src, t_node **stack_dest, int size_1, int size_2)
 {
 	t_node	*aux_1;
 	t_node	*aux_2;
 	t_node	*aux_aux;
 
-	if (stack_2 == NULL || *stack_2 == NULL)
+	if (stack_src == NULL || *stack_src == NULL)
 		return ;
 	else
 	{
