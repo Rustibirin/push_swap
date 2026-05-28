@@ -6,7 +6,7 @@
 /*   By: rumartin <rumartin@student.42malaga.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/05/26 21:58:20 by rumartin          #+#    #+#             */
-/*   Updated: 2026/05/27 23:04:08 by rumartin         ###   ########.fr       */
+/*   Updated: 2026/05/28 11:12:25 by rumartin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,6 +16,7 @@
 // Librerias
 # include <stdlib.h>
 # include <unistd.h>
+# include <limits.h>
 
 // Estructuras
 typedef struct stack
@@ -39,5 +40,10 @@ typedef struct parser
 
 // Prototipos
 int	ft_args_checker(int argc, char **argv, t_data *data);
+int	ft_stack_add_back(t_node **stack_a, int number);
+long long	ft_atoi(const char *str);
+int	ft_strncmp(const char *s1, const char *s2, size_t n);
+int	ft_isdigit(int c);
+void	*ft_calloc(size_t count, size_t size);
 
 #endif
