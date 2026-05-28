@@ -6,7 +6,7 @@
 /*   By: framirez <framirez@student.42malaga.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/05/27 21:37:35 by framirez          #+#    #+#             */
-/*   Updated: 2026/05/28 18:06:29 by framirez         ###   ########.fr       */
+/*   Updated: 2026/05/28 18:08:59 by framirez         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,7 +33,7 @@ void	swap(t_node **stack, int size)
 		b->prev = a->prev; // conectar B - D
 		b->next = a;       // conectar B - A
 		a->prev = b;       // conectar A - B
-		stack = b;
+		*stack = b;
 	}
 }
 void	sa(t_data *data)
