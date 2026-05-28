@@ -6,13 +6,13 @@
 /*   By: rumartin <rumartin@student.42malaga.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/05/28 09:49:14 by rumartin          #+#    #+#             */
-/*   Updated: 2026/05/28 15:52:38 by rumartin         ###   ########.fr       */
+/*   Updated: 2026/05/28 17:57:37 by rumartin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-int	ft_stack_add_back(t_node **stack, int number)
+int	ft_stack_add_back(t_node **stack, int size, int number)
 {
 	t_node	*new_node;
 	t_node	*last_node;
@@ -30,17 +30,18 @@ int	ft_stack_add_back(t_node **stack, int number)
 	else
 	{
 		last_node = (*stack)->prev; // Guardamos el uĺtimo nodo (el previo al primero).
-		last_node->next = new_node; // Hacemos que ese ultimo apunte a este nuevo ultimo.
-		new_node->prev = last_node; // Hacemos que este ultimo apunte a ese antiguo ulitmo.
-		new_node->next = *stack; // Hacemos que este nuevo ultimo apunte al primero del stack.
-		(*stack)->prev = new_node; // Hacemos que el primero del stack apunte a este nuevo ultimo.
+		last_node->next = new_node; // Hacemos que el next del actual ultimo apunte al nuevo ultimo.
+		new_node->prev = last_node; // Hacemos que el prev del nuevo ultimo apunte al actual ulitmo.
+		new_node->next = *stack; // Hacemos que el next del nuevo ultimo apunte al primero del stack.
+		(*stack)->prev = new_node; // Hacemos que el prev del primero del stack apunte al nuevo ultimo.
 	}
+	size++;
 	return (0);
 }
 
-long long	ft_atoi(const char *str)
+long	ft_atoi(const char *str)
 {
-	long long	number;
+	long	number;
 	int			sign;
 
 	while (*str == ' ' || (*str >= 9 && *str <= 13))

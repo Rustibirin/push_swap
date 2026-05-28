@@ -6,7 +6,7 @@
 /*   By: rumartin <rumartin@student.42malaga.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/05/27 16:27:26 by rumartin          #+#    #+#             */
-/*   Updated: 2026/05/28 15:44:35 by rumartin         ###   ########.fr       */
+/*   Updated: 2026/05/28 17:58:15 by rumartin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,7 +25,7 @@ static	int	ft_check_duplicate(t_node *stack_a, int number)
 			return (1);
 		act_node = act_node->next;
 		if (act_node == stack_a)
-			break ;
+			return (0);
 	}
 	return (0);
 }
@@ -53,28 +53,28 @@ static	int	ft_valid_num(char *str)
 static	int	ft_detect_flag(char *str, t_data *data)
 {
 	if (str && (ft_strncmp(str, "--simple", 9) == 0))
-		return (data->strategy = 1, 1);
+		return (data->strategy = 1, 0);
 	if (str && (ft_strncmp(str, "--medium", 9) == 0))
-		return (data->strategy = 2, 1);
+		return (data->strategy = 2, 0);
 	if (str && (ft_strncmp(str, "--complex", 10) == 0))
-		return (data->strategy = 3, 1);
+		return (data->strategy = 3, 0);
 	if (str && (ft_strncmp(str, "--adaptive", 11) == 0))
-		return (data->strategy = 4, 1);
+		return (data->strategy = 4, 0);
 	if (str && (ft_strncmp(str, "--bench", 8) == 0))
-		return (data->bench = 1, 1);
-	return (0);
+		return (data->bench = 1, 0);
+	return (1);
 }
 
 static	int	ft_fill_stack(char **argv, t_data *data)
 {
-	int			i;
-	long long	number_long;
-	int			number;
+	int		i;
+	long	number_long;
+	int		number;
 
 	i = 1;
 	while (argv[i])
 	{
-		if (!ft_detect_flag(argv[i], data))
+		if (ft_detect_flag(argv[i], data))
 		{
 			if (ft_valid_num(argv[i]))
 				return (1);
@@ -84,7 +84,7 @@ static	int	ft_fill_stack(char **argv, t_data *data)
 			number = number_long;
 			if (ft_check_duplicate(data->stack_a, number))
 				return (1);
-			if (ft_stack_add_back(&data->stack_a, number))
+			if (ft_stack_add_back(&data->stack_a, data->size_a, number))
 				return (1);
 		}
 		i++;
