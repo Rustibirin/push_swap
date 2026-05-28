@@ -6,7 +6,7 @@
 /*   By: rumartin <rumartin@student.42malaga.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/05/27 16:27:26 by rumartin          #+#    #+#             */
-/*   Updated: 2026/05/28 11:39:04 by rumartin         ###   ########.fr       */
+/*   Updated: 2026/05/28 15:44:35 by rumartin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -50,25 +50,43 @@ static	int	ft_valid_num(char *str)
 	return (0);
 }
 
+static	int	ft_detect_flag(char *str, t_data *data)
+{
+	if (str && (ft_strncmp(str, "--simple", 9) == 0))
+		return (data->strategy = 1, 1);
+	if (str && (ft_strncmp(str, "--medium", 9) == 0))
+		return (data->strategy = 2, 1);
+	if (str && (ft_strncmp(str, "--complex", 10) == 0))
+		return (data->strategy = 3, 1);
+	if (str && (ft_strncmp(str, "--adaptive", 11) == 0))
+		return (data->strategy = 4, 1);
+	if (str && (ft_strncmp(str, "--bench", 8) == 0))
+		return (data->bench = 1, 1);
+	return (0);
+}
+
 static	int	ft_fill_stack(char **argv, t_data *data)
 {
 	int			i;
 	long long	number_long;
 	int			number;
 
-	i = data->start_i;
+	i = 1;
 	while (argv[i])
 	{
-		if (ft_valid_num(argv[i]))
-			return (1);
-		number_long = ft_atoi(argv[i]);
-		if (number_long > INT_MAX || number_long < INT_MIN)
-			return (1);
-		number = number_long;
-		if (ft_check_duplicate(data->stack_a, number))
-			return (1);
-		if (ft_stack_add_back(&data->stack_a, number))
-			return (1);
+		if (!ft_detect_flag(argv[i], data))
+		{
+			if (ft_valid_num(argv[i]))
+				return (1);
+			number_long = ft_atoi(argv[i]);
+			if (number_long > INT_MAX || number_long < INT_MIN)
+				return (1);
+			number = number_long;
+			if (ft_check_duplicate(data->stack_a, number))
+				return (1);
+			if (ft_stack_add_back(&data->stack_a, number))
+				return (1);
+		}
 		i++;
 	}
 	return (0);
@@ -76,26 +94,8 @@ static	int	ft_fill_stack(char **argv, t_data *data)
 
 int	ft_args_checker(int argc, char **argv, t_data *data)
 {
-	data->start_i = 2;
 	data->bench = 0;
-	if (argv[1] && (ft_strncmp(argv[1], "--simple", 9) == 0))
-		data->strategy = 1;
-	else if (argv[1] && (ft_strncmp(argv[1], "--medium", 9) == 0))
-		data->strategy = 2;
-	else if (argv[1] && (ft_strncmp(argv[1], "--complex", 10) == 0))
-		data->strategy = 3;
-	else if (argv[1] && (ft_strncmp(argv[1], "--adaptive", 11) == 0))
-		data->strategy = 4;
-	else if (argv[1] && (ft_strncmp(argv[1], "--benchmark", 12) == 0))
-	{
-		data->strategy = 4;
-		data->bench = 1;
-	}
-	else
-	{
-		data->strategy = 4;
-		data->start_i = 1;
-	}
+	data->strategy = 4;
 	if (ft_fill_stack(argv, data))
 		return (1);
 	return (0);
