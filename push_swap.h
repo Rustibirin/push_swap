@@ -6,7 +6,7 @@
 /*   By: rumartin <rumartin@student.42malaga.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/05/26 21:58:20 by rumartin          #+#    #+#             */
-/*   Updated: 2026/05/29 12:12:36 by rumartin         ###   ########.fr       */
+/*   Updated: 2026/05/29 13:55:13 by rumartin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -44,5 +44,17 @@ int		ft_strncmp(const char *s1, const char *s2, size_t n);
 int		ft_isdigit(int c);
 void	*ft_calloc(size_t count, size_t size);
 void	ft_free_stack(t_node **stack);
+void	rotate(t_node **stack);
+void	ra(t_data *data);
+void	rb(t_data *data);
+void	rr(t_data *data);
+void	swap(t_node **stack);
+void	sa(t_data *data);
+void	sb(t_data *data);
+void	ss(t_data *data);
+void	reverse_rotate(t_node **stack);
+void	rra(t_data *data);
+void	rrb(t_data *data);
+void	rrr(t_data *data);
 
 #endif
