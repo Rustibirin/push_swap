@@ -6,7 +6,7 @@
 /*   By: rumartin <rumartin@student.42malaga.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/05/27 16:27:26 by rumartin          #+#    #+#             */
-/*   Updated: 2026/05/29 16:39:34 by rumartin         ###   ########.fr       */
+/*   Updated: 2026/05/29 17:39:03 by rumartin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -68,25 +68,34 @@ static	int	ft_detect_flag(char *str, t_data *data)
 static	int	ft_fill_stack(char **argv, t_data *data)
 {
 	int		i;
+	int		j;
 	long	number_long;
 	int		number;
+	char	**mtrx;
 
 	i = 1;
 	while (argv[i])
 	{
-		if (ft_detect_flag(argv[i], data))
+		mtrx = ft_split(argv[i], ' ');
+		j = 0;
+		while (mtrx[j])
 		{
-			if (ft_valid_num(argv[i]))
-				return (1);
-			number_long = ft_atoi(argv[i]);
-			if (number_long < INT_MIN || number_long > INT_MAX)
-				return (1);
-			number = number_long;
-			if (ft_check_duplicate(data->stack_a, number))
-				return (1);
-			if (ft_stack_add_back(&data->stack_a, &data->size_a, number))
-				return (1);
+			if (ft_detect_flag(mtrx[j], data))
+			{
+				if (ft_valid_num(mtrx[j]))
+					return (1);
+				number_long = ft_atoi(mtrx[j]);
+				if (number_long < INT_MIN || number_long > INT_MAX)
+					return (1);
+				number = number_long;
+				if (ft_check_duplicate(data->stack_a, number))
+					return (1);
+				if (ft_stack_add_back(&data->stack_a, &data->size_a, number))
+					return (1);
+			}
+			j++;
 		}
+		ft_free_mtrx(mtrx);
 		i++;
 	}
 	return (0);
