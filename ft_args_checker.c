@@ -6,7 +6,7 @@
 /*   By: rumartin <rumartin@student.42malaga.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/05/27 16:27:26 by rumartin          #+#    #+#             */
-/*   Updated: 2026/05/29 17:39:03 by rumartin         ###   ########.fr       */
+/*   Updated: 2026/05/29 21:30:44 by rumartin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -65,47 +65,44 @@ static	int	ft_detect_flag(char *str, t_data *data)
 	return (1);
 }
 
-static	int	ft_fill_stack(char **argv, t_data *data)
+static	int	ft_fill_stack(char *str, t_data *data)
 {
-	int		i;
-	int		j;
 	long	number_long;
 	int		number;
-	char	**mtrx;
-
-	i = 1;
-	while (argv[i])
+	
+	if (ft_detect_flag(str, data))
 	{
-		mtrx = ft_split(argv[i], ' ');
-		j = 0;
-		while (mtrx[j])
-		{
-			if (ft_detect_flag(mtrx[j], data))
-			{
-				if (ft_valid_num(mtrx[j]))
-					return (1);
-				number_long = ft_atoi(mtrx[j]);
-				if (number_long < INT_MIN || number_long > INT_MAX)
-					return (1);
-				number = number_long;
-				if (ft_check_duplicate(data->stack_a, number))
-					return (1);
-				if (ft_stack_add_back(&data->stack_a, &data->size_a, number))
-					return (1);
-			}
-			j++;
-		}
-		ft_free_mtrx(mtrx);
-		i++;
+		if (ft_valid_num(str))
+			return (1);
+		number_long = ft_atoi(str);
+		if (number_long < INT_MIN || number_long > INT_MAX)
+			return (1);
+		number = number_long;
+		if (ft_check_duplicate(data->stack_a, number))
+			return (1);
+		if (ft_stack_add_back(&data->stack_a, &data->size_a, number))
+			return (1);
 	}
 	return (0);
 }
 
 int	ft_args_checker(char **argv, t_data *data)
 {
+	char	**mtrx;
+	int		i;
+	int		j;
+
 	data->bench = NO;
 	data->strategy = ADAPTIVE;
-	if (ft_fill_stack(argv, data))
-		return (1);
+	i = 1;
+	while (argv[i])
+	{
+		mtrx = ft_split(argv[i], ' ');
+		j = 0;
+		while (mtrx[j++])
+			ft_fill_stack(mtrx[j], data);
+		ft_free_mtrx(mtrx);
+		i++;
+	}
 	return (0);
 }
