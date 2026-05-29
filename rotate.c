@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   rotate.c                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: framirez <framirez@student.42malaga.com>   +#+  +:+       +#+        */
+/*   By: rumartin <rumartin@student.42malaga.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/05/28 13:00:32 by framirez          #+#    #+#             */
-/*   Updated: 2026/05/29 00:16:46 by framirez         ###   ########.fr       */
+/*   Updated: 2026/05/29 13:13:30 by rumartin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,13 +21,16 @@ void	rotate(t_node **stack)
 void	ra(t_data *data)
 {
 	rotate(&data->stack_a);
+	write(1, "ra", 2);
 }
 void	rb(t_data *data)
 {
 	rotate(&data->stack_b);
+	write(1, "rb", 2);
 }
 void	rr(t_data *data)
 {
 	rotate(&data->stack_a);
 	rotate(&data->stack_b);
+	write(1, "rr", 2);
 }

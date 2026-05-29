@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   swap.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: framirez <framirez@student.42malaga.com>   +#+  +:+       +#+        */
+/*   By: rumartin <rumartin@student.42malaga.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/05/27 21:37:35 by framirez          #+#    #+#             */
-/*   Updated: 2026/05/29 00:20:53 by framirez         ###   ########.fr       */
+/*   Updated: 2026/05/29 13:13:58 by rumartin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,13 +38,16 @@ void	swap(t_node **stack)
 void	sa(t_data *data)
 {
 	swap(&data->stack_a);
+	write(1, "sa", 2);
 }
 void	sb(t_data *data)
 {
 	swap(&data->stack_b);
+	write(1, "sb", 2);
 }
 void	ss(t_data *data)
 {
 	swap(&data->stack_a);
 	swap(&data->stack_b);
+	write(1, "ss", 2);
 }
