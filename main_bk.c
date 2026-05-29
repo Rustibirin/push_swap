@@ -6,7 +6,7 @@
 /*   By: rumartin <rumartin@student.42malaga.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/05/26 21:55:21 by rumartin          #+#    #+#             */
-/*   Updated: 2026/05/29 13:55:11 by rumartin         ###   ########.fr       */
+/*   Updated: 2026/05/29 14:15:30 by rumartin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,12 +21,12 @@ void	ft_print_stack(t_node *stack)
 
 	if (!stack)
 	{
-		printf("El stack esta vacio\n");
+		printf("El stack requerido esta vacio\n");
 		return;
 	}
 	first_node = stack;
 	act_node = first_node->next;
-	printf("---------------------- STACK %p ----------------------\n\n", stack);
+	printf("\n---------------------- %p ----------------------\n", stack);
 	i = 1;
 	printf("El valor del nodo %i es: %i\n", i++, first_node->number);
 	while (act_node != first_node)
@@ -37,7 +37,7 @@ void	ft_print_stack(t_node *stack)
 	}
 }
 
-void	ft_log(t_data *data)
+void	ft_print_data(t_data *data)
 {
 	printf("La estrategia elegida es: %i\n", data->strategy);
 	printf("Bench = %i\n", data->bench);
@@ -45,13 +45,25 @@ void	ft_log(t_data *data)
 	printf("El numero de nodos en el stack A es: %i\n", data->size_a);
 	printf("El puntero al stack B es: %p\n", data->stack_b);
 	printf("El numero de nodos en el stack B es: %i\n", data->size_b);
+}
+
+void	ft_log(t_data *data)
+{
+	printf("\n---------------------- DATA ----------------------\n");
+	ft_print_data(data);
+	printf("\n---------------------- STACK A ----------------------\n");
 	ft_print_stack(data->stack_a);
+	printf("\n---------------------- STACK B ----------------------\n");
 	ft_print_stack(data->stack_b);
-	printf("---------------------- Movimientos ----------------------\n\n");
+	printf("\n---------------------- Movimientos ----------------------\n");
 	rra(data);
 	sa(data);
+	printf("\n---------------------- STACK A ----------------------\n");
 	ft_print_stack(data->stack_a);
+	printf("\n---------------------- STACK B ----------------------\n");
 	ft_print_stack(data->stack_b);
+	printf("\n---------------------- DATA ----------------------\n");
+	ft_print_data(data);
 }
 
 int	main_bk(int argc, char **argv)
