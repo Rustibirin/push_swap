@@ -6,19 +6,16 @@
 /*   By: framirez <framirez@student.42malaga.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/05/28 18:03:47 by framirez          #+#    #+#             */
-/*   Updated: 2026/05/29 18:24:47 by framirez         ###   ########.fr       */
+/*   Updated: 2026/05/29 19:10:00 by framirez         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-void	push(t_node **stack_src, t_node **stack_dest)
+t_node	*extract_node(t_node **stack_src)
 {
 	t_node	*node;
-	t_node	*last_dest;
 
-	if (stack_src == NULL || *stack_src == NULL)
-		return ;
 	node = *stack_src;
 	if ((*stack_src)->next == *stack_src)
 		*stack_src = NULL;
@@ -28,11 +25,22 @@ void	push(t_node **stack_src, t_node **stack_dest)
 		node->next->prev = node->prev;
 		*stack_src = node->next;
 	}
+	return (node);
+}
+
+void	push(t_node **stack_src, t_node **stack_dest)
+{
+	t_node	*node;
+	t_node	*last_dest;
+
+	if (stack_src == NULL || *stack_src == NULL)
+		return ;
+	node = extract_node(stack_src);
 	if (*stack_dest == NULL)
 	{
 		*stack_dest = node;
-		(*stack_dest)->next = *stack_dest;
-		(*stack_dest)->prev = *stack_dest;
+		node->next = node;
+		node->prev = node;
 	}
 	else
 	{
