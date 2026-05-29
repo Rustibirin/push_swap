@@ -6,7 +6,7 @@
 /*   By: framirez <framirez@student.42malaga.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/05/28 18:03:47 by framirez          #+#    #+#             */
-/*   Updated: 2026/05/29 18:04:51 by framirez         ###   ########.fr       */
+/*   Updated: 2026/05/29 18:24:47 by framirez         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,6 +15,7 @@
 void	push(t_node **stack_src, t_node **stack_dest)
 {
 	t_node	*node;
+	t_node	*last_dest;
 
 	if (stack_src == NULL || *stack_src == NULL)
 		return ;
@@ -35,9 +36,11 @@ void	push(t_node **stack_src, t_node **stack_dest)
 	}
 	else
 	{
+		last_dest = (*stack_dest)->prev;
+		node->next = (*stack_dest);
 		(*stack_dest)->prev = node;
-		node->next = *stack_dest;
-		node->prev = (*stack_dest)->prev->prev;
+		last_dest->next = node;
+		node->prev = last_dest;
 		*stack_dest = node;
 	}
 }
