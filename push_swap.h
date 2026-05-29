@@ -6,7 +6,7 @@
 /*   By: rumartin <rumartin@student.42malaga.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/05/26 21:58:20 by rumartin          #+#    #+#             */
-/*   Updated: 2026/05/29 13:55:13 by rumartin         ###   ########.fr       */
+/*   Updated: 2026/05/29 14:49:39 by rumartin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,6 +19,21 @@
 # include <limits.h>
 
 // Estructuras
+
+typedef enum e_strategy
+{
+	SIMPLE,
+	MEDIUM,
+	COMPLEX,
+	ADAPTIVE
+} 	t_strategy;
+
+typedef enum e_bench
+{
+	NO,
+	YES
+} 	t_bench;
+
 typedef struct stack
 {
 	int				number;
@@ -28,8 +43,8 @@ typedef struct stack
 
 typedef struct s_data
 {
-	int				strategy; //Pensar en cambiar por un enum
-	int				bench;
+	t_strategy		strategy;
+	t_bench			bench;
 	t_node			*stack_a;
 	t_node			*stack_b;
 	int				size_a;

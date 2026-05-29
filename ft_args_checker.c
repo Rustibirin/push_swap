@@ -6,7 +6,7 @@
 /*   By: rumartin <rumartin@student.42malaga.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/05/27 16:27:26 by rumartin          #+#    #+#             */
-/*   Updated: 2026/05/29 12:04:49 by rumartin         ###   ########.fr       */
+/*   Updated: 2026/05/29 14:51:52 by rumartin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -53,15 +53,15 @@ static	int	ft_valid_num(char *str)
 static	int	ft_detect_flag(char *str, t_data *data)
 {
 	if (str && (ft_strncmp(str, "--simple", 9) == 0))
-		return (data->strategy = 1, 0);
+		return (data->strategy = SIMPLE, 0);
 	if (str && (ft_strncmp(str, "--medium", 9) == 0))
-		return (data->strategy = 2, 0);
+		return (data->strategy = MEDIUM, 0);
 	if (str && (ft_strncmp(str, "--complex", 10) == 0))
-		return (data->strategy = 3, 0);
+		return (data->strategy = COMPLEX, 0);
 	if (str && (ft_strncmp(str, "--adaptive", 11) == 0))
-		return (data->strategy = 4, 0);
+		return (data->strategy = ADAPTIVE, 0);
 	if (str && (ft_strncmp(str, "--bench", 8) == 0))
-		return (data->bench = 1, 0);
+		return (data->bench = YES, 0);
 	return (1);
 }
 
@@ -94,8 +94,8 @@ static	int	ft_fill_stack(char **argv, t_data *data)
 
 int	ft_args_checker(char **argv, t_data *data)
 {
-	data->bench = 0;
-	data->strategy = 4;
+	data->bench = NO;
+	data->strategy = ADAPTIVE;
 	if (ft_fill_stack(argv, data))
 		return (1);
 	return (0);

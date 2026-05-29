@@ -6,7 +6,7 @@
 /*   By: rumartin <rumartin@student.42malaga.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/05/26 21:55:21 by rumartin          #+#    #+#             */
-/*   Updated: 2026/05/29 14:15:30 by rumartin         ###   ########.fr       */
+/*   Updated: 2026/05/29 14:58:59 by rumartin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,12 +39,15 @@ void	ft_print_stack(t_node *stack)
 
 void	ft_print_data(t_data *data)
 {
-	printf("La estrategia elegida es: %i\n", data->strategy);
-	printf("Bench = %i\n", data->bench);
-	printf("El puntero a el stack A es: %p\n", data->stack_a);
-	printf("El numero de nodos en el stack A es: %i\n", data->size_a);
-	printf("El puntero al stack B es: %p\n", data->stack_b);
-	printf("El numero de nodos en el stack B es: %i\n", data->size_b);
+	char *strategy_arr[] = {"SIMPLE" "MEDIUM" "COMPLEX" "ADAPTIVE"};
+	char *bench_arr[] = {"NO" "YES"};
+	
+	printf("[bench] La estrategia elegida es: %s\n", strategy_arr[data->strategy]);
+	printf("[bench] Bench = %s\n", bench_arr[data->bench]);
+	printf("[bench] El puntero a el stack A es: %p\n", data->stack_a);
+	printf("[bench] El numero de nodos en el stack A es: %i\n", data->size_a);
+	printf("[bench] El puntero al stack B es: %p\n", data->stack_b);
+	printf("[bench] El numero de nodos en el stack B es: %i\n", data->size_b);
 }
 
 void	ft_log(t_data *data)
