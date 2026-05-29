@@ -6,7 +6,7 @@
 /*   By: framirez <framirez@student.42malaga.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/05/28 18:03:47 by framirez          #+#    #+#             */
-/*   Updated: 2026/05/29 17:24:52 by framirez         ###   ########.fr       */
+/*   Updated: 2026/05/29 18:04:51 by framirez         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -43,8 +43,11 @@ void	push(t_node **stack_src, t_node **stack_dest)
 }
 void	pa(t_data *data)
 {
-	push();
+	push(&data->stack_b, &data->stack_a);
+	write(1, "pa\n", 3);
 }
 void	pb(t_data *data)
 {
+	push(&data->stack_a, &data->stack_b);
+	write(1, "pb\n", 3);
 }
