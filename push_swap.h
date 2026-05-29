@@ -6,7 +6,7 @@
 /*   By: rumartin <rumartin@student.42malaga.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/05/26 21:58:20 by rumartin          #+#    #+#             */
-/*   Updated: 2026/05/29 17:25:03 by rumartin         ###   ########.fr       */
+/*   Updated: 2026/05/29 22:03:48 by rumartin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,13 +26,13 @@ typedef enum e_strategy
 	MEDIUM,
 	COMPLEX,
 	ADAPTIVE
-} 	t_strategy;
+}	t_strategy;
 
 typedef enum e_bench
 {
 	NO,
 	YES
-} 	t_bench;
+}	t_bench;
 
 typedef struct stack
 {
@@ -59,7 +59,7 @@ int		ft_args_checker(char **argv, t_data *data);
 int		ft_stack_add_back(t_node **stack, int *size, int number);
 int		ft_strncmp(const char *s1, const char *s2, size_t n);
 int		ft_isdigit(int c);
-void	*ft_free_mtrx(char **mtrx);
+void	*ft_free_mtrx(char **mtrx, size_t id);
 void	*ft_calloc(size_t count, size_t size);
 void	ft_free_stack(t_node **stack);
 void	rotate(t_node **stack);
@@ -74,5 +74,8 @@ void	reverse_rotate(t_node **stack);
 void	rra(t_data *data);
 void	rrb(t_data *data);
 void	rrr(t_data *data);
+void	push(t_node **stack_src, t_node **stack_dest);
+void	pa(t_data *data);
+void	pb(t_data *data);
 
 #endif

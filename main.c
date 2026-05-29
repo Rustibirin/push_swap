@@ -6,7 +6,7 @@
 /*   By: rumartin <rumartin@student.42malaga.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/05/26 21:55:21 by rumartin          #+#    #+#             */
-/*   Updated: 2026/05/29 16:18:31 by rumartin         ###   ########.fr       */
+/*   Updated: 2026/05/29 22:00:55 by rumartin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,7 +22,7 @@ void	ft_print_stack(t_node *stack)
 	if (!stack)
 	{
 		printf("El stack requerido esta vacio\n");
-		return;
+		return ;
 	}
 	first_node = stack;
 	act_node = first_node->next;
@@ -39,10 +39,10 @@ void	ft_print_stack(t_node *stack)
 
 void	ft_print_data(t_data *data)
 {
-	char *strategy_arr[] = {"SIMPLE", "MEDIUM", "COMPLEX", "ADAPTIVE"};
-	char *bench_arr[] = {"NO", "YES"};
-	
-	printf("[bench] La estrategia elegida es: %s\n", strategy_arr[data->strategy]);
+	char	*strategy_arr[] = {"SIMPLE", "MEDIUM", "COMPLEX", "ADAPTIVE"};
+	char	*bench_arr[] = {"NO", "YES"};
+
+	printf("La estrategia elegida es: %s\n", strategy_arr[data->strategy]);
 	printf("[bench] Bench: %s\n", bench_arr[data->bench]);
 	printf("[bench] El puntero a el stack A es: %p\n", data->stack_a);
 	printf("[bench] El numero de nodos en el stack A es: %i\n", data->size_a);
@@ -61,8 +61,11 @@ void	ft_log(t_data *data)
 	printf("\n---------------------- Movimientos ----------------------\n");
 	rra(data);
 	sa(data);
+	pb(data);
 	ra(data);
+	pb(data);
 	sa(data);
+	pb(data);
 	printf("\n---------------------- STACK A ----------------------\n");
 	ft_print_stack(data->stack_a);
 	printf("\n---------------------- STACK B ----------------------\n");

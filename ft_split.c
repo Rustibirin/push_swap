@@ -6,17 +6,18 @@
 /*   By: rumartin <rumartin@student.42malaga.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/04/21 19:09:18 by rumartin          #+#    #+#             */
-/*   Updated: 2026/05/29 17:24:52 by rumartin         ###   ########.fr       */
+/*   Updated: 2026/05/29 21:56:29 by rumartin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-void	*ft_free_mtrx(char **mtrx)
+void	*ft_free_mtrx(char **mtrx, size_t id)
 {
-	while (*mtrx)
+	while (id > 0)
 	{
-		free(*mtrx++);
+		id--;
+		free(mtrx[id]);
 	}
 	free(mtrx);
 	return (NULL);
@@ -58,7 +59,7 @@ static	char	**fill_mtrx(char **mtrx, size_t n_words, char const *s, char c)
 			i++;
 		mtrx[row] = ft_substr(s, start, i - start);
 		if (!mtrx[row])
-			return (ft_free_mtrx (mtrx));
+			return (ft_free_mtrx (mtrx, row));
 		row++;
 	}
 	mtrx[row] = NULL;

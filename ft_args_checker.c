@@ -6,7 +6,7 @@
 /*   By: rumartin <rumartin@student.42malaga.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/05/27 16:27:26 by rumartin          #+#    #+#             */
-/*   Updated: 2026/05/29 21:30:44 by rumartin         ###   ########.fr       */
+/*   Updated: 2026/05/29 22:21:30 by rumartin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -69,7 +69,7 @@ static	int	ft_fill_stack(char *str, t_data *data)
 {
 	long	number_long;
 	int		number;
-	
+
 	if (ft_detect_flag(str, data))
 	{
 		if (ft_valid_num(str))
@@ -99,9 +99,10 @@ int	ft_args_checker(char **argv, t_data *data)
 	{
 		mtrx = ft_split(argv[i], ' ');
 		j = 0;
-		while (mtrx[j++])
-			ft_fill_stack(mtrx[j], data);
-		ft_free_mtrx(mtrx);
+		while (mtrx[j])
+			if (ft_fill_stack(mtrx[j++], data))
+				return (ft_free_mtrx(mtrx, j), 1);
+		ft_free_mtrx(mtrx, j);
 		i++;
 	}
 	return (0);
