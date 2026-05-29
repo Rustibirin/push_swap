@@ -6,7 +6,7 @@
 /*   By: framirez <framirez@student.42malaga.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/05/28 18:03:47 by framirez          #+#    #+#             */
-/*   Updated: 2026/05/29 19:10:00 by framirez         ###   ########.fr       */
+/*   Updated: 2026/05/29 19:17:34 by framirez         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,6 +25,8 @@ t_node	*extract_node(t_node **stack_src)
 		node->next->prev = node->prev;
 		*stack_src = node->next;
 	}
+	node->next = NULL;
+	node->prev = NULL;
 	return (node);
 }
 
