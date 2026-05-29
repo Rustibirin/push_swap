@@ -1,19 +1,19 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.c                                             :+:      :+:    :+:   */
+/*   main_parser_check.c                                :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: rumartin <rumartin@student.42malaga.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/05/26 21:55:21 by rumartin          #+#    #+#             */
-/*   Updated: 2026/05/29 12:19:52 by rumartin         ###   ########.fr       */
+/*   Updated: 2026/05/29 13:10:43 by rumartin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 #include <stdio.h>
 
-int	main(int argc, char **argv)
+int	main_parser_checker(int argc, char **argv)
 {
 	t_data	*data;
 	t_node	*first_node;
