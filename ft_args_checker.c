@@ -6,7 +6,7 @@
 /*   By: rumartin <rumartin@student.42malaga.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/05/27 16:27:26 by rumartin          #+#    #+#             */
-/*   Updated: 2026/05/29 14:51:52 by rumartin         ###   ########.fr       */
+/*   Updated: 2026/05/29 16:39:34 by rumartin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -79,7 +79,7 @@ static	int	ft_fill_stack(char **argv, t_data *data)
 			if (ft_valid_num(argv[i]))
 				return (1);
 			number_long = ft_atoi(argv[i]);
-			if (number_long > INT_MAX || number_long < INT_MIN)
+			if (number_long < INT_MIN || number_long > INT_MAX)
 				return (1);
 			number = number_long;
 			if (ft_check_duplicate(data->stack_a, number))
