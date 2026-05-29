@@ -6,13 +6,13 @@
 /*   By: rumartin <rumartin@student.42malaga.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/05/28 09:49:14 by rumartin          #+#    #+#             */
-/*   Updated: 2026/05/29 11:26:37 by rumartin         ###   ########.fr       */
+/*   Updated: 2026/05/29 12:16:09 by rumartin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-int	ft_stack_add_back(t_node **stack, int size, int number)
+int	ft_stack_add_back(t_node **stack, int *size, int number)
 {
 	t_node	*new_node;
 	t_node	*last_node;
@@ -35,7 +35,7 @@ int	ft_stack_add_back(t_node **stack, int size, int number)
 		new_node->next = *stack;
 		(*stack)->prev = new_node;
 	}
-	size++;
+	*size = *(size) + 1;
 	return (0);
 }
 

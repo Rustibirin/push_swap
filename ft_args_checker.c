@@ -6,7 +6,7 @@
 /*   By: rumartin <rumartin@student.42malaga.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/05/27 16:27:26 by rumartin          #+#    #+#             */
-/*   Updated: 2026/05/28 17:58:15 by rumartin         ###   ########.fr       */
+/*   Updated: 2026/05/29 12:04:49 by rumartin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -84,7 +84,7 @@ static	int	ft_fill_stack(char **argv, t_data *data)
 			number = number_long;
 			if (ft_check_duplicate(data->stack_a, number))
 				return (1);
-			if (ft_stack_add_back(&data->stack_a, data->size_a, number))
+			if (ft_stack_add_back(&data->stack_a, &data->size_a, number))
 				return (1);
 		}
 		i++;
@@ -92,7 +92,7 @@ static	int	ft_fill_stack(char **argv, t_data *data)
 	return (0);
 }
 
-int	ft_args_checker(int argc, char **argv, t_data *data)
+int	ft_args_checker(char **argv, t_data *data)
 {
 	data->bench = 0;
 	data->strategy = 4;
