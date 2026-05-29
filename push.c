@@ -6,35 +6,45 @@
 /*   By: framirez <framirez@student.42malaga.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/05/28 18:03:47 by framirez          #+#    #+#             */
-/*   Updated: 2026/05/28 20:01:31 by framirez         ###   ########.fr       */
+/*   Updated: 2026/05/29 17:24:52 by framirez         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-void	push(t_node **stack_src, t_node **stack_dest, int size_1, int size_2)
+void	push(t_node **stack_src, t_node **stack_dest)
 {
-	t_node	*aux_1;
-	t_node	*aux_2;
-	t_node	*aux_aux;
+	t_node	*node;
 
 	if (stack_src == NULL || *stack_src == NULL)
 		return ;
+	node = *stack_src;
+	if ((*stack_src)->next == *stack_src)
+		*stack_src = NULL;
 	else
 	{
-		aux_1 = *stack_1;          // guardo el primer nodo
-		aux_2 = *stack_2;          // guardo el segundo nodo
-		aux_1->prev->next = aux_2; // control de extremos
-		aux_2->prev->next = aux_1; // control de extremos
-		aux_1->next->prev = aux_2; // control de extremos
-		aux_2->next->prev = aux_1; // control de extremos
-		aux_aux = aux_2->prev;     // empieza el bloque de los prev
-		aux_2->prev = aux_1->prev;
-		aux_1->prev = aux_aux;
-		aux_aux = aux_2->next; // empieza el bloque de los next
-		aux_2->next = aux_1->next;
-		aux_1->next = aux_aux;
-		*stack_1 = aux_2;
-		*stack_2 = aux_1;
+		node->prev->next = node->next;
+		node->next->prev = node->prev;
+		*stack_src = node->next;
 	}
+	if (*stack_dest == NULL)
+	{
+		*stack_dest = node;
+		(*stack_dest)->next = *stack_dest;
+		(*stack_dest)->prev = *stack_dest;
+	}
+	else
+	{
+		(*stack_dest)->prev = node;
+		node->next = *stack_dest;
+		node->prev = (*stack_dest)->prev->prev;
+		*stack_dest = node;
+	}
+}
+void	pa(t_data *data)
+{
+	push();
+}
+void	pb(t_data *data)
+{
 }
