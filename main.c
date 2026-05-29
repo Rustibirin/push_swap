@@ -6,7 +6,7 @@
 /*   By: rumartin <rumartin@student.42malaga.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/05/26 21:55:21 by rumartin          #+#    #+#             */
-/*   Updated: 2026/05/28 15:51:30 by rumartin         ###   ########.fr       */
+/*   Updated: 2026/05/29 11:23:01 by rumartin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,6 +22,7 @@ int	main(int argc, char **argv)
 	if (!data)
 		return (1);
 	if (ft_args_checker(argc, argv, data))
-		return (write(2, "Error\n", 6), ft_free_stack(&data->stack_a), free(data), 1);
+		return (write(2, "Error\n", 6), ft_free_stack(&data->stack_a),
+			free(data), 1);
 	return (ft_free_stack(&data->stack_a), free(data), 0);
 }

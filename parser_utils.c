@@ -6,7 +6,7 @@
 /*   By: rumartin <rumartin@student.42malaga.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/05/28 09:49:14 by rumartin          #+#    #+#             */
-/*   Updated: 2026/05/28 17:57:37 by rumartin         ###   ########.fr       */
+/*   Updated: 2026/05/29 11:26:37 by rumartin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,11 +29,11 @@ int	ft_stack_add_back(t_node **stack, int size, int number)
 	}
 	else
 	{
-		last_node = (*stack)->prev; // Guardamos el uĺtimo nodo (el previo al primero).
-		last_node->next = new_node; // Hacemos que el next del actual ultimo apunte al nuevo ultimo.
-		new_node->prev = last_node; // Hacemos que el prev del nuevo ultimo apunte al actual ulitmo.
-		new_node->next = *stack; // Hacemos que el next del nuevo ultimo apunte al primero del stack.
-		(*stack)->prev = new_node; // Hacemos que el prev del primero del stack apunte al nuevo ultimo.
+		last_node = (*stack)->prev;
+		last_node->next = new_node;
+		new_node->prev = last_node;
+		new_node->next = *stack;
+		(*stack)->prev = new_node;
 	}
 	size++;
 	return (0);
@@ -42,7 +42,7 @@ int	ft_stack_add_back(t_node **stack, int size, int number)
 long	ft_atoi(const char *str)
 {
 	long	number;
-	int			sign;
+	int		sign;
 
 	while (*str == ' ' || (*str >= 9 && *str <= 13))
 		str++;
@@ -81,8 +81,8 @@ int	ft_strncmp(const char *s1, const char *s2, size_t n)
 void	*ft_calloc(size_t count, size_t size)
 {
 	unsigned char	*ptr;
-	size_t		i;
-	size_t		total;
+	size_t			i;
+	size_t			total;
 
 	total = count * size;
 	ptr = malloc(total);

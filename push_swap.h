@@ -6,7 +6,7 @@
 /*   By: rumartin <rumartin@student.42malaga.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/05/26 21:58:20 by rumartin          #+#    #+#             */
-/*   Updated: 2026/05/28 17:58:06 by rumartin         ###   ########.fr       */
+/*   Updated: 2026/05/29 11:24:10 by rumartin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,13 +36,12 @@ typedef struct s_data
 	int				size_b;
 }					t_data;
 
-
 // Prototipos
-int	ft_args_checker(int argc, char **argv, t_data *data);
-int	ft_stack_add_back(t_node **stack, int size, int number);
-long long	ft_atoi(const char *str);
-int	ft_strncmp(const char *s1, const char *s2, size_t n);
-int	ft_isdigit(int c);
+long	ft_atoi(const char *str);
+int		ft_args_checker(int argc, char **argv, t_data *data);
+int		ft_stack_add_back(t_node **stack, int size, int number);
+int		ft_strncmp(const char *s1, const char *s2, size_t n);
+int		ft_isdigit(int c);
 void	*ft_calloc(size_t count, size_t size);
 
 #endif
