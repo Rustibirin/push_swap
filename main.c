@@ -6,7 +6,7 @@
 /*   By: rumartin <rumartin@student.42malaga.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/05/26 21:55:21 by rumartin          #+#    #+#             */
-/*   Updated: 2026/05/31 13:59:30 by rumartin         ###   ########.fr       */
+/*   Updated: 2026/05/31 14:06:46 by rumartin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,6 +28,7 @@ int	ft_algorithms(t_data *data)
 			return (1);
 	return (0);
 }
+
 int	ft_sorted(t_node *stack)
 {
 	t_node	*act_node;
