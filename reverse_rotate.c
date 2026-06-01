@@ -6,30 +6,48 @@
 /*   By: framirez <framirez@student.42malaga.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/05/28 13:13:48 by framirez          #+#    #+#             */
-/*   Updated: 2026/05/29 18:03:05 by framirez         ###   ########.fr       */
+/*   Updated: 2026/05/31 16:03:29 by framirez         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-void	reverse_rotate(t_node **stack)
+int	reverse_rotate(t_node **stack)
 {
-	if (stack != NULL && *stack != NULL)
+	if (stack != NULL && *stack != NULL && (*stack)->next != *stack)
+	{
 		*stack = (*stack)->prev;
+		return(1);
+	}	
+	return(0);
 }
-void	rra(t_data *data)
+int	rra(t_data *data)
 {
-	reverse_rotate(&data->stack_a);
-	write(1, "rra\n", 4);
+	if(reverse_rotate(&data->stack_a) == 1)
+	{
+		write(1, "rra\n", 4);
+		return(1);
+	}
+	return(0);	
 }
-void	rrb(t_data *data)
+int	rrb(t_data *data)
 {
-	reverse_rotate(&data->stack_b);
-	write(1, "rrb\n", 4);
+	if(reverse_rotate(&data->stack_b) == 1)
+	{
+		write(1, "rrb\n", 4);
+		return(1);
+	}
+	return(0);
 }
-void	rrr(t_data *data)
+int	rrr(t_data *data)
 {
-	reverse_rotate(&data->stack_a);
-	reverse_rotate(&data->stack_b);
+	int a;
+	int b;
+	
+	a = reverse_rotate(&data->stack_a);
+	b = reverse_rotate(&data->stack_b);
+	if(a == 0 && b == 0)
+		return(0);
 	write(1, "rrr\n", 4);
+	return(1);
 }

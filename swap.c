@@ -6,19 +6,19 @@
 /*   By: framirez <framirez@student.42malaga.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/05/27 21:37:35 by framirez          #+#    #+#             */
-/*   Updated: 2026/05/29 18:00:56 by framirez         ###   ########.fr       */
+/*   Updated: 2026/06/01 18:30:41 by framirez         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-void	swap(t_node **stack)
+int	swap(t_node **stack)
 {
 	t_node	*a;
 	t_node	*b;
 
 	if (stack == NULL || *stack == NULL || (*stack)->next == *stack)
-		return ;
+		return(0);
 	a = *stack;
 	b = a->next;
 	if (b->next == a)
@@ -33,20 +33,35 @@ void	swap(t_node **stack)
 		a->prev = b;       // conectar A - B
 		*stack = b;
 	}
+	return(1);
 }
-void	sa(t_data *data)
+int	sa(t_data *data)
 {
-	swap(&data->stack_a);
-	write(1, "sa\n", 3);
+	if(swap(&data->stack_a) == 1)
+	{
+		write(1, "sa\n", 3);
+		return(1);
+	}
+	return(0);
 }
-void	sb(t_data *data)
+int	sb(t_data *data)
 {
-	swap(&data->stack_b);
-	write(1, "sb\n", 3);
+	if(swap(&data->stack_b) == 1)
+	{
+		write(1, "sb\n", 3);
+		return(1);
+	}
+	return(0);
 }
-void	ss(t_data *data)
-{
-	swap(&data->stack_a);
-	swap(&data->stack_b);
+int	ss(t_data *data)
+{	
+	int a;
+	int b;
+	
+	a = swap(&data->stack_a);
+	b = swap(&data->stack_b);
+	if(a == 0 && b == 0)
+		return(0);
 	write(1, "ss\n", 3);
+	return(1);
 }

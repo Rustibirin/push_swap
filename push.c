@@ -6,7 +6,7 @@
 /*   By: framirez <framirez@student.42malaga.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/05/28 18:03:47 by framirez          #+#    #+#             */
-/*   Updated: 2026/05/29 19:17:34 by framirez         ###   ########.fr       */
+/*   Updated: 2026/05/30 13:36:26 by framirez         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,13 +30,13 @@ t_node	*extract_node(t_node **stack_src)
 	return (node);
 }
 
-void	push(t_node **stack_src, t_node **stack_dest)
+int	push(t_node **stack_src, t_node **stack_dest)
 {
 	t_node	*node;
 	t_node	*last_dest;
 
 	if (stack_src == NULL || *stack_src == NULL)
-		return ;
+		return (0);
 	node = extract_node(stack_src);
 	if (*stack_dest == NULL)
 	{
@@ -53,14 +53,23 @@ void	push(t_node **stack_src, t_node **stack_dest)
 		node->prev = last_dest;
 		*stack_dest = node;
 	}
+	return(1);
 }
-void	pa(t_data *data)
+int	pa(t_data *data)
 {
-	push(&data->stack_b, &data->stack_a);
-	write(1, "pa\n", 3);
+	if(push(&data->stack_b, &data->stack_a) == 1)
+	{
+		write(1, "pa\n", 3);
+		return(1);
+	}
+	return(0);
 }
-void	pb(t_data *data)
+int	pb(t_data *data)
 {
-	push(&data->stack_a, &data->stack_b);
-	write(1, "pb\n", 3);
+	if(push(&data->stack_a, &data->stack_b) == 1)
+	{
+		write(1, "pb\n", 3);
+		return(1);
+	}
+	return(0);
 }
