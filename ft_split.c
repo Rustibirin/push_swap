@@ -6,22 +6,11 @@
 /*   By: rumartin <rumartin@student.42malaga.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/04/21 19:09:18 by rumartin          #+#    #+#             */
-/*   Updated: 2026/05/29 21:56:29 by rumartin         ###   ########.fr       */
+/*   Updated: 2026/06/01 11:39:58 by rumartin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
-
-void	*ft_free_mtrx(char **mtrx, size_t id)
-{
-	while (id > 0)
-	{
-		id--;
-		free(mtrx[id]);
-	}
-	free(mtrx);
-	return (NULL);
-}
 
 static	size_t	ft_count_words(char const *s, char c)
 {
@@ -59,7 +48,7 @@ static	char	**fill_mtrx(char **mtrx, size_t n_words, char const *s, char c)
 			i++;
 		mtrx[row] = ft_substr(s, start, i - start);
 		if (!mtrx[row])
-			return (ft_free_mtrx (mtrx, row));
+			return (ft_free_mtrx (mtrx));
 		row++;
 	}
 	mtrx[row] = NULL;

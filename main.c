@@ -6,7 +6,7 @@
 /*   By: rumartin <rumartin@student.42malaga.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/05/26 21:55:21 by rumartin          #+#    #+#             */
-/*   Updated: 2026/06/01 11:23:52 by rumartin         ###   ########.fr       */
+/*   Updated: 2026/06/01 12:12:34 by rumartin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -69,15 +69,15 @@ int	ft_sorted(t_node *stack)
 	t_node	*act_node;
 
 	if (!stack)
-		return (0);
+		return (1);
 	act_node = stack;
 	while (act_node->next != stack)
 	{
 		if (act_node->number > act_node->next->number)
-			return (1);
+			return (0);
 		act_node = act_node->next;
 	}
-	return (0);
+	return (1);
 }
 
 int	main(int argc, char **argv)
@@ -91,11 +91,13 @@ int	main(int argc, char **argv)
 		return (1);
 	if (ft_args_checker(argv, data))
 		return (write(2, "Error\n", 6), ft_free_stack(&data->stack_a),
-			free(data), 1);
-	if (ft_sorted(data->stack_a))
+			ft_free_stack(&data->stack_b), free(data), 1);
+	if (!ft_sorted(data->stack_a))
 	{
-		ft_compute_disorder(data->stack_a);
+		data->dis_index = ft_compute_disorder(data->stack_a);
 		ft_algorithms(data);
 	}
-	return (ft_free_stack(&data->stack_a), free(data), 0);
+	ft_bench(data);
+	return (ft_free_stack(&data->stack_a), ft_free_stack(&data->stack_b),
+		free(data), 0);
 }

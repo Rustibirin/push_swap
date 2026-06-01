@@ -1,19 +1,19 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main_test.c                                        :+:      :+:    :+:   */
+/*   bench.c                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: rumartin <rumartin@student.42malaga.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/05/26 21:55:21 by rumartin          #+#    #+#             */
-/*   Updated: 2026/05/31 14:02:25 by rumartin         ###   ########.fr       */
+/*   Updated: 2026/06/01 12:12:10 by rumartin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 #include <stdio.h>
 
-void	ft_print_stack(t_node *stack)
+static	void	ft_print_stack(t_node *stack)
 {
 	t_node	*first_node;
 	t_node	*act_node;
@@ -37,7 +37,7 @@ void	ft_print_stack(t_node *stack)
 	}
 }
 
-void	ft_print_data(t_data *data)
+static	void	ft_print_data(t_data *data)
 {
 	char	*strategy_arr[] = {"SIMPLE", "MEDIUM", "COMPLEX", "ADAPTIVE"};
 	char	*bench_arr[] = {"NO", "YES"};
@@ -48,9 +48,10 @@ void	ft_print_data(t_data *data)
 	printf("[bench] El numero de nodos en el stack A es: %i\n", data->size_a);
 	printf("[bench] El puntero al stack B es: %p\n", data->stack_b);
 	printf("[bench] El numero de nodos en el stack B es: %i\n", data->size_b);
+	printf("[bench] El indice de desorden es: %f\n", data->dis_index);
 }
 
-void	ft_log(t_data *data)
+void	ft_bench(t_data *data)
 {
 	printf("\n---------------------- DATA ----------------------\n");
 	ft_print_data(data);
@@ -72,21 +73,4 @@ void	ft_log(t_data *data)
 	ft_print_stack(data->stack_b);
 	printf("\n---------------------- DATA ----------------------\n");
 	ft_print_data(data);
-}
-
-int	main_test(int argc, char **argv)
-{
-	t_data	*data;
-
-	if (argc < 2)
-		return (0);
-	data = ft_calloc(1, sizeof(t_data));
-	if (!data)
-		return (1);
-	if (ft_args_checker(argv, data))
-		return (write(2, "Error\n", 6), ft_free_stack(&data->stack_a),
-			ft_free_stack(&data->stack_b), free(data), 1);
-	ft_log(data);
-	return (ft_free_stack(&data->stack_a),
-		ft_free_stack(&data->stack_b), free(data), 0);
 }

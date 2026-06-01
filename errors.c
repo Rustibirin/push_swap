@@ -6,7 +6,7 @@
 /*   By: rumartin <rumartin@student.42malaga.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/05/28 11:20:22 by rumartin          #+#    #+#             */
-/*   Updated: 2026/05/29 11:35:12 by rumartin         ###   ########.fr       */
+/*   Updated: 2026/06/01 11:40:34 by rumartin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,4 +30,17 @@ void	ft_free_stack(t_node **stack)
 	}
 	free(first_node);
 	*stack = NULL;
+}
+
+void	*ft_free_mtrx(char **mtrx)
+{
+	int i;
+
+	i= 0;
+	if(!mtrx)
+		return (NULL);
+	while (mtrx[i])
+		free(mtrx[i++]);
+	free(mtrx);
+	return (NULL);
 }

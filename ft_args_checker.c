@@ -6,7 +6,7 @@
 /*   By: rumartin <rumartin@student.42malaga.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/05/27 16:27:26 by rumartin          #+#    #+#             */
-/*   Updated: 2026/05/29 22:21:30 by rumartin         ###   ########.fr       */
+/*   Updated: 2026/06/01 12:21:16 by rumartin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -98,11 +98,13 @@ int	ft_args_checker(char **argv, t_data *data)
 	while (argv[i])
 	{
 		mtrx = ft_split(argv[i], ' ');
+		if(!mtrx[0])
+			return(1);
 		j = 0;
 		while (mtrx[j])
 			if (ft_fill_stack(mtrx[j++], data))
-				return (ft_free_mtrx(mtrx, j), 1);
-		ft_free_mtrx(mtrx, j);
+				return (ft_free_mtrx(mtrx), 1);
+		ft_free_mtrx(mtrx);
 		i++;
 	}
 	return (0);
