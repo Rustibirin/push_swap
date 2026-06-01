@@ -6,7 +6,7 @@
 /*   By: rumartin <rumartin@student.42malaga.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/05/31 14:07:20 by rumartin          #+#    #+#             */
-/*   Updated: 2026/06/01 18:26:37 by rumartin         ###   ########.fr       */
+/*   Updated: 2026/06/01 18:55:01 by rumartin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -87,7 +87,7 @@ int	ft_simple(t_data *data)
 		pb(data);
 	}
 	ft_sort_three(data);
-	while (data->stack_b > 0)
+	while (data->size_b > 0)
 		pa(data);
 	return (0);
 }
