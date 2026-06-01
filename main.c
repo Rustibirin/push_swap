@@ -14,17 +14,17 @@
 
 int	ft_algorithms(t_data *data)
 {
-	if(data->strategy == SIMPLE)
+	if (data->strategy == SIMPLE)
 	{
 		if (ft_simple(data))
 			return (1);
 	}
-	else if(data->strategy == MEDIUM)
+	else if (data->strategy == MEDIUM)
 	{
 		if (ft_medium(data))
 			return (1);
 	}
-	else if(data->strategy == COMPLEX)
+	else if (data->strategy == COMPLEX)
 	{
 		if (ft_complex(data))
 			return (1);

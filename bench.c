@@ -6,7 +6,7 @@
 /*   By: rumartin <rumartin@student.42malaga.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/05/26 21:55:21 by rumartin          #+#    #+#             */
-/*   Updated: 2026/06/01 12:12:10 by rumartin         ###   ########.fr       */
+/*   Updated: 2026/06/01 18:36:32 by rumartin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,9 +39,15 @@ static	void	ft_print_stack(t_node *stack)
 
 static	void	ft_print_data(t_data *data)
 {
-	char	*strategy_arr[] = {"SIMPLE", "MEDIUM", "COMPLEX", "ADAPTIVE"};
-	char	*bench_arr[] = {"NO", "YES"};
+	char	*strategy_arr[4];
+	char	*bench_arr[2];
 
+	strategy_arr[0] = "SIMPLE";
+	strategy_arr[1] = "MEDIUM";
+	strategy_arr[2] = "COMPLEX";
+	strategy_arr[3] = "ADAPTIVE";
+	bench_arr[0] = "NO";
+	bench_arr[1] = "YES";
 	printf("La estrategia elegida es: %s\n", strategy_arr[data->strategy]);
 	printf("[bench] Bench: %s\n", bench_arr[data->bench]);
 	printf("[bench] El puntero a el stack A es: %p\n", data->stack_a);
@@ -59,18 +65,4 @@ void	ft_bench(t_data *data)
 	ft_print_stack(data->stack_a);
 	printf("\n---------------------- STACK B ----------------------\n");
 	ft_print_stack(data->stack_b);
-	printf("\n---------------------- Movimientos ----------------------\n");
-	rra(data);
-	sa(data);
-	pb(data);
-	ra(data);
-	pb(data);
-	sa(data);
-	pb(data);
-	printf("\n---------------------- STACK A ----------------------\n");
-	ft_print_stack(data->stack_a);
-	printf("\n---------------------- STACK B ----------------------\n");
-	ft_print_stack(data->stack_b);
-	printf("\n---------------------- DATA ----------------------\n");
-	ft_print_data(data);
 }

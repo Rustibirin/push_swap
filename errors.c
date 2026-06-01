@@ -34,10 +34,10 @@ void	ft_free_stack(t_node **stack)
 
 void	*ft_free_mtrx(char **mtrx)
 {
-	int i;
+	int	i;
 
-	i= 0;
-	if(!mtrx)
+	i = 0;
+	if (!mtrx)
 		return (NULL);
 	while (mtrx[i])
 		free(mtrx[i++]);

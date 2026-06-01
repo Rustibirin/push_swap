@@ -98,8 +98,8 @@ int	ft_args_checker(char **argv, t_data *data)
 	while (argv[i])
 	{
 		mtrx = ft_split(argv[i], ' ');
-		if(!mtrx[0])
-			return(1);
+		if (!mtrx[0])
+			return (1);
 		j = 0;
 		while (mtrx[j])
 			if (ft_fill_stack(mtrx[j++], data))
