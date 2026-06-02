@@ -6,7 +6,7 @@
 /*   By: rumartin <rumartin@student.42malaga.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/04/21 19:09:18 by rumartin          #+#    #+#             */
-/*   Updated: 2026/06/01 11:39:58 by rumartin         ###   ########.fr       */
+/*   Updated: 2026/06/02 23:27:13 by rumartin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -55,16 +55,15 @@ static	char	**fill_mtrx(char **mtrx, size_t n_words, char const *s, char c)
 	return (mtrx);
 }
 
-char	**ft_split(char const *s, char c)
+char	**ft_split(t_data *data, char const *s, char c)
 {
-	char	**mtrx;
 	size_t	n_words;
 
 	if (!s)
 		return (NULL);
 	n_words = ft_count_words(s, c);
-	mtrx = ft_calloc ((n_words + 1), sizeof (char *));
-	if (!mtrx)
+	data->mtrx = ft_calloc ((n_words + 1), sizeof (char *));
+	if (!data->mtrx)
 		return (NULL);
-	return (fill_mtrx(mtrx, n_words, s, c));
+	return (fill_mtrx(data->mtrx, n_words, s, c));
 }

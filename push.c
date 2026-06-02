@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   push.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: framirez <framirez@student.42malaga.com>   +#+  +:+       +#+        */
+/*   By: rumartin <rumartin@student.42malaga.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/05/28 18:03:47 by framirez          #+#    #+#             */
-/*   Updated: 2026/06/01 19:29:43 by framirez         ###   ########.fr       */
+/*   Updated: 2026/06/02 18:56:27 by rumartin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -59,8 +59,8 @@ int	pa(t_data *data)
 {
 	if(push(&data->stack_b, &data->stack_a) == 1)
 	{
-		data->size_a--;
-		data->size_b++;
+		data->size_a++;
+		data->size_b--;
 		write(1, "pa\n", 3);
 		return(1);
 	}
@@ -70,8 +70,8 @@ int	pb(t_data *data)
 {
 	if(push(&data->stack_a, &data->stack_b) == 1)
 	{
-		data->size_a++;
-		data->size_b--;
+		data->size_a--;
+		data->size_b++;
 		write(1, "pb\n", 3);
 		return(1);
 	}
