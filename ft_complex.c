@@ -6,7 +6,7 @@
 /*   By: rumartin <rumartin@student.42malaga.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/06/02 18:24:32 by rumartin          #+#    #+#             */
-/*   Updated: 2026/06/02 21:17:23 by rumartin         ###   ########.fr       */
+/*   Updated: 2026/06/02 23:12:13 by rumartin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,19 +29,19 @@ static	void	ft_fill_array(t_node *stack, int *arr, int size)
 	}
 }
 
-int	ft_get_middle(t_node *stack, int size)
+int	ft_get_middle(t_data *data)
 {
 	int	*arr;
 	int	i;
 	int	temp;
 	int	middle;
 
-	arr = ft_calloc(size, sizeof(int));
+	arr = ft_calloc(data->size_a, sizeof(int));
 	if (!arr)
-		return (1); // No puede ser 1. Tengo qué pensar cómo resolver este return de fallo.
-	ft_fill_array(stack, arr, size);
+		ft_free_and_exit(data);
+	ft_fill_array(data->stack_a, arr, data->size_a);
 	i = 0;
-	while (i < size - 1)
+	while (i < data->size_a - 1)
 	{
 		if (arr[i] < arr[i + 1])
 			i++;
@@ -53,15 +53,15 @@ int	ft_get_middle(t_node *stack, int size)
 			i = 0;
 		}
 	}
-	middle = arr[size / 2];
+	middle = arr[data->size_a / 2];
 	free (arr);
 	return (middle);
-
 }
 int	ft_complex(t_data *data)
 {
 	int	middle;
 
-	middle = ft_get_middle(data->stack_a, data->size_a);
+	middle = ft_get_middle(data);
+	(void) middle;
 	return (0);
 }

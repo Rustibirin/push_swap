@@ -6,7 +6,7 @@
 /*   By: rumartin <rumartin@student.42malaga.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/05/28 11:20:22 by rumartin          #+#    #+#             */
-/*   Updated: 2026/06/01 11:40:34 by rumartin         ###   ########.fr       */
+/*   Updated: 2026/06/02 23:26:31 by rumartin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -43,4 +43,17 @@ void	*ft_free_mtrx(char **mtrx)
 		free(mtrx[i++]);
 	free(mtrx);
 	return (NULL);
+}
+
+void	ft_free_and_exit(t_data *data)
+{
+	if (data->mtrx)
+		ft_free_mtrx(data->mtrx);
+	if (data->stack_a)
+		ft_free_stack(&data->stack_a);
+	if (data->stack_b)
+		ft_free_stack(&data->stack_b);
+	free(data);
+	write(2, "Error\n", 6);
+	exit (1);
 }
