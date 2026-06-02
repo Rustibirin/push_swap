@@ -6,7 +6,7 @@
 /*   By: rumartin <rumartin@student.42malaga.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/05/26 21:58:20 by rumartin          #+#    #+#             */
-/*   Updated: 2026/06/01 12:11:52 by rumartin         ###   ########.fr       */
+/*   Updated: 2026/06/02 12:45:10 by rumartin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -67,21 +67,22 @@ int		ft_adaptive(t_data *data);
 void	*ft_free_mtrx(char **mtrx);
 void	*ft_calloc(size_t count, size_t size);
 void	ft_free_stack(t_node **stack);
-void	rotate(t_node **stack);
-void	ra(t_data *data);
-void	rb(t_data *data);
-void	rr(t_data *data);
-void	swap(t_node **stack);
-void	sa(t_data *data);
-void	sb(t_data *data);
-void	ss(t_data *data);
-void	reverse_rotate(t_node **stack);
-void	rra(t_data *data);
-void	rrb(t_data *data);
-void	rrr(t_data *data);
-void	push(t_node **stack_src, t_node **stack_dest);
-void	pa(t_data *data);
-void	pb(t_data *data);
 void	ft_bench(t_data *data);
+int		rotate(t_node **stack);
+int		ra(t_data *data);
+int		rb(t_data *data);
+int		rr(t_data *data);
+int		swap(t_node **stack);
+int		sa(t_data *data);
+int		sb(t_data *data);
+int		ss(t_data *data);
+int		reverse_rotate(t_node **stack);
+int		rra(t_data *data);
+int		rrb(t_data *data);
+int		rrr(t_data *data);
+int		push(t_node **stack_src, t_node **stack_dest);
+int		pa(t_data *data);
+int		pb(t_data *data);
+
 
 #endif

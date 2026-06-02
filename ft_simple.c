@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   algotihms.c                                        :+:      :+:    :+:   */
+/*   ft_simple.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: rumartin <rumartin@student.42malaga.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/05/31 14:07:20 by rumartin          #+#    #+#             */
-/*   Updated: 2026/06/02 12:37:18 by rumartin         ###   ########.fr       */
+/*   Updated: 2026/06/02 18:25:01 by rumartin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -97,12 +97,6 @@ int	ft_simple(t_data *data)
 int	ft_medium(t_data *data)
 {
 	data->size_b = 2; //borrar
-	return (0);
-}
-
-int	ft_complex(t_data *data)
-{
-	data->size_b = 3; //borrar
 	return (0);
 }
 
