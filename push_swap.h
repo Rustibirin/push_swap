@@ -6,7 +6,7 @@
 /*   By: rumartin <rumartin@student.42malaga.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/05/26 21:58:20 by rumartin          #+#    #+#             */
-/*   Updated: 2026/06/03 10:07:30 by rumartin         ###   ########.fr       */
+/*   Updated: 2026/06/03 10:41:31 by rumartin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,7 @@
 # define PUSH_SWAP_H
 
 // Librerias
+
 # include <stdlib.h>
 # include <unistd.h>
 # include <limits.h>
@@ -28,7 +29,6 @@ typedef struct s_vars
 	int	pa_count;
 	int	pb_count;
 }		t_complex_vars;
-
 
 typedef enum e_strategy
 {
@@ -84,6 +84,10 @@ void	ft_sort_three(t_data *data);
 void	ft_fill_array(t_node *stack, int *arr, int size);
 int		ft_quicksort_a(t_data *data, int size);
 int		ft_quicksort_b(t_data *data, int size);
+int		ft_rewind_a(t_data *data, int ra_count);
+int		ft_rewind_b(t_data *data, int rb_count);
+int		ft_sort_small_a(t_data *data, int size);
+int		ft_sort_small_b(t_data *data, int size);
 int		rotate(t_node **stack);
 int		ra(t_data *data);
 int		rb(t_data *data);

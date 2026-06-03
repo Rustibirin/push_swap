@@ -41,10 +41,12 @@ int	ft_sort_small_b(t_data *data, int size)
 	if (size == 1)
 		pa(data);
 	if (size == 2)
+	{
 		if (data->stack_b->number < data->stack_b->next->number)
 			sb(data);
 		pa(data);
 		pa(data);
+	}
 	return (0);
 }
 

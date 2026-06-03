@@ -67,7 +67,7 @@ int	ft_quicksort_b(t_data *data, int size)
 	ft_rewind_b(data, c_vars.rb_count);
 	ft_quicksort_a(data, c_vars.pa_count);
 	ft_quicksort_b(data, c_vars.rb_count);
-	return (0);	
+	return (0);
 }
 
 int	ft_quicksort_a(t_data *data, int size)
@@ -96,7 +96,7 @@ int	ft_quicksort_a(t_data *data, int size)
 	ft_rewind_a(data, c_vars.ra_count);
 	ft_quicksort_a(data, c_vars.ra_count);
 	ft_quicksort_b(data, c_vars.pb_count);
-	return (0);	
+	return (0);
 }
 
 int	ft_complex(t_data *data)

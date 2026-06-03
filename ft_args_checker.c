@@ -6,7 +6,7 @@
 /*   By: rumartin <rumartin@student.42malaga.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/05/27 16:27:26 by rumartin          #+#    #+#             */
-/*   Updated: 2026/06/02 23:25:05 by rumartin         ###   ########.fr       */
+/*   Updated: 2026/06/03 10:38:52 by rumartin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -90,6 +90,7 @@ void	ft_args_checker(char **argv, t_data *data)
 {
 	int		i;
 	int		j;
+	int		fail_mtrx;
 
 	data->bench = NO;
 	data->strategy = ADAPTIVE;
@@ -101,11 +102,14 @@ void	ft_args_checker(char **argv, t_data *data)
 			ft_free_and_exit(data);
 		j = 0;
 		while (data->mtrx[j])
-			if (ft_fill_stack(data->mtrx[j++], data))
+		{
+			fail_mtrx = ft_fill_stack(data->mtrx[j++], data);
+			if (fail_mtrx)
 			{
 				ft_free_and_exit(data);
 				return ;
 			}
+		}
 		ft_free_mtrx(data->mtrx);
 		i++;
 	}

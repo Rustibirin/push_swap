@@ -17,37 +17,40 @@ int	reverse_rotate(t_node **stack)
 	if (stack != NULL && *stack != NULL && (*stack)->next != *stack)
 	{
 		*stack = (*stack)->prev;
-		return(1);
-	}	
-	return(0);
+		return (1);
+	}
+	return (0);
 }
+
 int	rra(t_data *data)
 {
-	if(reverse_rotate(&data->stack_a) == 1)
+	if (reverse_rotate(&data->stack_a) == 1)
 	{
 		write(1, "rra\n", 4);
-		return(1);
+		return (1);
 	}
-	return(0);	
+	return (0);
 }
+
 int	rrb(t_data *data)
 {
-	if(reverse_rotate(&data->stack_b) == 1)
+	if (reverse_rotate(&data->stack_b) == 1)
 	{
 		write(1, "rrb\n", 4);
-		return(1);
+		return (1);
 	}
-	return(0);
+	return (0);
 }
+
 int	rrr(t_data *data)
 {
-	int a;
-	int b;
-	
+	int	a;
+	int	b;
+
 	a = reverse_rotate(&data->stack_a);
 	b = reverse_rotate(&data->stack_b);
-	if(a == 0 && b == 0)
-		return(0);
+	if (a == 0 && b == 0)
+		return (0);
 	write(1, "rrr\n", 4);
-	return(1);
+	return (1);
 }

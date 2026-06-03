@@ -15,40 +15,42 @@
 int	rotate(t_node **stack)
 {
 	if (stack != NULL && *stack != NULL)
-	{	
+	{
 		*stack = (*stack)->next;
-		return(1);
+		return (1);
 	}
-	return(0);
+	return (0);
 }
 
 int	ra(t_data *data)
 {
-	if(rotate(&data->stack_a) == 1)
+	if (rotate(&data->stack_a) == 1)
 	{
 		write(1, "ra\n", 3);
-		return(1);
+		return (1);
 	}
-	return(0);
+	return (0);
 }
+
 int	rb(t_data *data)
 {
-	if(rotate(&data->stack_b) == 1)
+	if (rotate(&data->stack_b) == 1)
 	{
 		write(1, "rb\n", 3);
-		return(1);
+		return (1);
 	}
-	return(0);
+	return (0);
 }
+
 int	rr(t_data *data)
 {
 	int	a;
 	int	b;
-	
+
 	a = rotate(&data->stack_a);
 	b = rotate(&data->stack_b);
-	if(a == 0 && b == 0)
-		return(0);
+	if (a == 0 && b == 0)
+		return (0);
 	write(1, "rr\n", 3);
-	return(1);
+	return (1);
 }
