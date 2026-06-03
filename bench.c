@@ -6,12 +6,11 @@
 /*   By: rumartin <rumartin@student.42malaga.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/05/26 21:55:21 by rumartin          #+#    #+#             */
-/*   Updated: 2026/06/03 11:35:49 by rumartin         ###   ########.fr       */
+/*   Updated: 2026/06/03 11:48:59 by rumartin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
-#include <stdio.h>
 
 static	void	ft_print_stack(t_node *stack)
 {
