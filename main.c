@@ -6,11 +6,21 @@
 /*   By: rumartin <rumartin@student.42malaga.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/05/26 21:55:21 by rumartin          #+#    #+#             */
-/*   Updated: 2026/06/02 22:49:45 by rumartin         ###   ########.fr       */
+/*   Updated: 2026/06/03 15:28:23 by rumartin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
+
+static	void	ft_adaptive(t_data *data)
+{
+	if (data->dis_index < 0,2)
+		ft_simple(data);
+	if (data->dis_index >= 0,2 && data->dis_index < 0,5)
+		ft_medium(data);
+	if (data->dis_index > 0,5)
+		ft_complex(data);
+}
 
 static	void	ft_algorithms(t_data *data)
 {

@@ -1,2 +1,5 @@
-push_swap
 args.txt
+push_swap
+/obj
+libftprintf.a
+/ftprintf/obj
