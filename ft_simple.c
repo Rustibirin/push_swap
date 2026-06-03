@@ -6,12 +6,11 @@
 /*   By: rumartin <rumartin@student.42malaga.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/05/31 14:07:20 by rumartin          #+#    #+#             */
-/*   Updated: 2026/06/03 10:46:52 by rumartin         ###   ########.fr       */
+/*   Updated: 2026/06/03 11:48:05 by rumartin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
-#include <stdio.h>
 
 static	int	ft_find_min_pos(t_node *stack)
 {
@@ -97,12 +96,12 @@ int	ft_simple(t_data *data)
 
 int	ft_medium(t_data *data)
 {
-	printf("borrar %i\n", data->size_b);
+	ft_printf("borrar %i\n", data->size_b);
 	return (0);
 }
 
 int	ft_adaptive(t_data *data)
 {
-	printf("borrar %i\n", data->size_b);
+	ft_printf("borrar %i\n", data->size_b);
 	return (0);
 }

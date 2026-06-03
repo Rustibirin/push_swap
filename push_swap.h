@@ -6,7 +6,7 @@
 /*   By: rumartin <rumartin@student.42malaga.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/05/26 21:58:20 by rumartin          #+#    #+#             */
-/*   Updated: 2026/06/03 10:41:31 by rumartin         ###   ########.fr       */
+/*   Updated: 2026/06/03 11:39:36 by rumartin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,6 +18,7 @@
 # include <stdlib.h>
 # include <unistd.h>
 # include <limits.h>
+# include "ftprintf/ft_printf.h"
 
 // Estructuras
 
