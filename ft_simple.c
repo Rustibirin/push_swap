@@ -6,7 +6,7 @@
 /*   By: rumartin <rumartin@student.42malaga.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/05/31 14:07:20 by rumartin          #+#    #+#             */
-/*   Updated: 2026/06/02 18:25:01 by rumartin         ###   ########.fr       */
+/*   Updated: 2026/06/03 09:51:07 by rumartin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,7 +36,7 @@ static	int	ft_find_min_pos(t_node *stack)
 	return (min_pos);
 }
 
-static	void	ft_sort_three(t_data *data)
+void	ft_sort_three(t_data *data)
 {
 	int	a;
 	int	b;
@@ -44,7 +44,7 @@ static	void	ft_sort_three(t_data *data)
 
 	a = data->stack_a->number;
 	b = data->stack_a->next->number;
-	c = data->stack_a->prev->number;
+	c = data->stack_a->next->next->number;
 	if (a < b && b < c)
 		return ;
 	if (a > b && b > c)

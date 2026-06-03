@@ -6,7 +6,7 @@
 /*   By: rumartin <rumartin@student.42malaga.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/05/26 21:58:20 by rumartin          #+#    #+#             */
-/*   Updated: 2026/06/02 23:23:00 by rumartin         ###   ########.fr       */
+/*   Updated: 2026/06/03 10:07:30 by rumartin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,6 +19,16 @@
 # include <limits.h>
 
 // Estructuras
+
+typedef struct s_vars
+{
+	int	middle;
+	int	ra_count;
+	int	rb_count;
+	int	pa_count;
+	int	pb_count;
+}		t_complex_vars;
+
 
 typedef enum e_strategy
 {
@@ -64,12 +74,16 @@ int		ft_simple(t_data *data);
 int		ft_medium(t_data *data);
 int		ft_complex(t_data *data);
 int		ft_adaptive(t_data *data);
-void		ft_args_checker(char **argv, t_data *data);
+void	ft_args_checker(char **argv, t_data *data);
 void	*ft_free_mtrx(char **mtrx);
 void	*ft_calloc(size_t count, size_t size);
 void	ft_free_stack(t_node **stack);
 void	ft_bench(t_data *data);
 void	ft_free_and_exit(t_data *data);
+void	ft_sort_three(t_data *data);
+void	ft_fill_array(t_node *stack, int *arr, int size);
+int		ft_quicksort_a(t_data *data, int size);
+int		ft_quicksort_b(t_data *data, int size);
 int		rotate(t_node **stack);
 int		ra(t_data *data);
 int		rb(t_data *data);
@@ -85,6 +99,5 @@ int		rrr(t_data *data);
 int		push(t_node **stack_src, t_node **stack_dest);
 int		pa(t_data *data);
 int		pb(t_data *data);
-
 
 #endif
