@@ -48,12 +48,12 @@ static	void	ft_print_data(t_data *data)
 	bench_arr[0] = "NO";
 	bench_arr[1] = "YES";
 	ft_printf("La estrategia elegida es: %s\n", strategy_arr[data->strategy]);
-	ft_printf("[bench] Bench: %s\n", bench_arr[data->bench]);
-	ft_printf("[bench] El puntero a el stack A es: %p\n", data->stack_a);
-	ft_printf("[bench] El numero de nodos en el stack A es: %i\n", data->size_a);
-	ft_printf("[bench] El puntero al stack B es: %p\n", data->stack_b);
-	ft_printf("[bench] El numero de nodos en el stack B es: %i\n", data->size_b);
-	ft_printf("[bench] El indice de desorden es: %f\n", data->dis_index);
+	ft_printf("Bench: %s\n", bench_arr[data->bench]);
+	ft_printf("El puntero a el stack A es: %p\n", data->stack_a);
+	ft_printf("El numero de nodos en el stack A es: %i\n", data->size_a);
+	ft_printf("El puntero al stack B es: %p\n", data->stack_b);
+	ft_printf("El numero de nodos en el stack B es: %i\n", data->size_b);
+	ft_printf("El indice de desorden es: %f\n", data->dis_index);
 }
 
 void	ft_bench(t_data *data)
