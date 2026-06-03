@@ -6,11 +6,11 @@
 #    By: rumartin <rumartin@student.42malaga.com>   +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2026/06/03 10:51:14 by rumartin          #+#    #+#              #
-#    Updated: 2026/06/03 11:19:01 by rumartin         ###   ########.fr        #
+#    Updated: 2026/06/03 11:23:41 by rumartin         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-NAME        = test
+NAME        = push_swap
 CC          = cc
 CFLAGS      = -Wall -Wextra -Werror
 RM          = rm -rf
@@ -20,14 +20,14 @@ PRINTF_DIR	= ./ftprintf
 PRINTF		= $(PRINTF_DIR)/libftprintf.a
 
 SRCS        = main.c errors.c ft_complex.c ft_complex_utils.c ft_simple.c \
-			  ft_split.c ft_split_utils.c paser.c parser_utils.c push.c \
-			  swap.c push_swap.c rotate.c reverse_rotate.c bench.c 
+			  ft_split.c ft_split_utils.c parser.c parser_utils.c push.c \
+			  swap.c rotate.c reverse_rotate.c bench.c 
 OBJS        = $(addprefix $(OBJS_DIR)/, $(SRCS:.c=.o))
 
 all: $(NAME)
 
 $(NAME): $(OBJS) $(PRINTF)
-	$(CC) $(CFLAGS) $(OBJS) &(PRINTF) -o  $(NAME)
+	$(CC) $(CFLAGS) $(OBJS) $(PRINTF) -o  $(NAME)
 $(PRINTF): FORCE
 	make -C $(PRINTF_DIR)
 
