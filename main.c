@@ -6,7 +6,7 @@
 /*   By: rumartin <rumartin@student.42malaga.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/05/26 21:55:21 by rumartin          #+#    #+#             */
-/*   Updated: 2026/06/03 15:30:19 by rumartin         ###   ########.fr       */
+/*   Updated: 2026/06/03 15:38:02 by rumartin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,9 +16,9 @@ static	void	ft_adaptive(t_data *data)
 {
 	if (data->dis_index < 0,2)
 		ft_simple(data);
-	if (data->dis_index >= 0,2 && data->dis_index < 0,5)
+	else if (data->dis_index >= 0,2 && data->dis_index < 0,5)
 		ft_medium(data);
-	if (data->dis_index >= 0,5)
+	else if (data->dis_index >= 0,5)
 		ft_complex(data);
 }
 
