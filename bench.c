@@ -6,7 +6,7 @@
 /*   By: rumartin <rumartin@student.42malaga.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/05/26 21:55:21 by rumartin          #+#    #+#             */
-/*   Updated: 2026/06/03 11:48:59 by rumartin         ###   ########.fr       */
+/*   Updated: 2026/06/03 16:14:07 by rumartin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,12 +38,14 @@ static	void	ft_print_stack(t_node *stack)
 
 static	void	ft_print_data(t_data *data)
 {
+	#include <stdio.h>
 	char	*strategy_arr[4];
 	char	*bench_arr[2];
 
-	strategy_arr[0] = "SIMPLE";
-	strategy_arr[1] = "MEDIUM";
-	strategy_arr[2] = "COMPLEX";
+	data->dis_index = data->dis_index * 100;
+	strategy_arr[0] = "SIMPLE / O(n2)";
+	strategy_arr[1] = "MEDIUM / O(nRaizn)";
+	strategy_arr[2] = "COMPLEX / O(n log n)";
 	strategy_arr[3] = "ADAPTIVE";
 	bench_arr[0] = "NO";
 	bench_arr[1] = "YES";
@@ -53,7 +55,7 @@ static	void	ft_print_data(t_data *data)
 	ft_printf("El numero de nodos en el stack A es: %i\n", data->size_a);
 	ft_printf("El puntero al stack B es: %p\n", data->stack_b);
 	ft_printf("El numero de nodos en el stack B es: %i\n", data->size_b);
-	ft_printf("El indice de desorden es: %f\n", data->dis_index);
+	ft_printf("El indice de desorden es: %i.00%%\n", data->dis_index);
 }
 
 void	ft_bench(t_data *data)

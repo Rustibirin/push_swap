@@ -6,7 +6,7 @@
 /*   By: rumartin <rumartin@student.42malaga.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/05/26 21:58:20 by rumartin          #+#    #+#             */
-/*   Updated: 2026/06/03 11:54:54 by rumartin         ###   ########.fr       */
+/*   Updated: 2026/06/03 15:59:53 by rumartin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -74,7 +74,6 @@ int		ft_isdigit(int c);
 int		ft_simple(t_data *data);
 int		ft_medium(t_data *data);
 int		ft_complex(t_data *data);
-int		ft_adaptive(t_data *data);
 void	ft_args_checker(char **argv, t_data *data);
 void	*ft_free_mtrx(char **mtrx);
 void	*ft_calloc(size_t count, size_t size);
