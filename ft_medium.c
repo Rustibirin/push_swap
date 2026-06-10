@@ -6,7 +6,7 @@
 /*   By: framirez <framirez@student.42malaga.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/06/05 16:01:57 by framirez          #+#    #+#             */
-/*   Updated: 2026/06/08 19:56:35 by framirez         ###   ########.fr       */
+/*   Updated: 2026/06/10 16:36:37 by framirez         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -67,8 +67,8 @@ int	ft_find_max_pos(t_node *stack)
 }
 void	chunks_to_b(t_data *data)
 {
-	size_t	chunk_size;
-	size_t	index_limit;
+	int	chunk_size;
+	int	index_limit;
 
 	index_assignment(data);
 	chunk_size = ft_sqrt(data->size_a) / 2;
