@@ -6,7 +6,7 @@
 /*   By: framirez <framirez@student.42malaga.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/05/26 21:55:21 by rumartin          #+#    #+#             */
-/*   Updated: 2026/06/13 13:52:50 by framirez         ###   ########.fr       */
+/*   Updated: 2026/06/13 16:45:15 by framirez         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -63,8 +63,8 @@ void	ft_bench(t_data *data)
 {
 	ft_printf("\n---------------------- DATA ----------------------\n");
 	ft_print_data(data);
-	/*ft_printf("\n---------------------- STACK A ----------------------\n");
-	ft_print_stack(data->stack_a);*/
+	ft_printf("\n---------------------- STACK A ----------------------\n");
+	ft_print_stack(data->stack_a);
 	ft_printf("\n---------------------- STACK B ----------------------\n");
 	ft_print_stack(data->stack_b);
 }
