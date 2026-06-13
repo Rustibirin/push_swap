@@ -6,7 +6,7 @@
 /*   By: framirez <framirez@student.42malaga.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/05/26 21:58:20 by rumartin          #+#    #+#             */
-/*   Updated: 2026/06/10 16:44:37 by framirez         ###   ########.fr       */
+/*   Updated: 2026/06/13 11:14:00 by framirez         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -105,6 +105,5 @@ int					push(t_node **stack_src, t_node **stack_dest);
 int					pa(t_data *data);
 int					pb(t_data *data);
 int					ft_sqrt(int num);
-int					ft_medium(t_data *data);
 
 #endif

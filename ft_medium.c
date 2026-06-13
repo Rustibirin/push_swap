@@ -6,13 +6,13 @@
 /*   By: framirez <framirez@student.42malaga.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/06/05 16:01:57 by framirez          #+#    #+#             */
-/*   Updated: 2026/06/10 16:36:37 by framirez         ###   ########.fr       */
+/*   Updated: 2026/06/13 11:59:34 by framirez         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-t_node	*ft_find_min_node(t_node *stack)
+static t_node	*ft_find_min_node(t_node *stack)
 {
 	t_node	*act_node;
 	t_node	*min_node;
@@ -27,7 +27,7 @@ t_node	*ft_find_min_node(t_node *stack)
 	}
 	return (min_node);
 }
-void	index_assignment(t_data *data)
+static void	index_assignment(t_data *data)
 {
 	int		count;
 	t_node	*act_node;
@@ -42,7 +42,7 @@ void	index_assignment(t_data *data)
 	return ;
 }
 
-int	ft_find_max_pos(t_node *stack)
+static int	ft_find_max_pos(t_node *stack)
 {
 	int		max_pos;
 	int		act_pos;
@@ -65,7 +65,7 @@ int	ft_find_max_pos(t_node *stack)
 	}
 	return (max_pos);
 }
-void	chunks_to_b(t_data *data)
+static void	chunks_to_b(t_data *data)
 {
 	int	chunk_size;
 	int	index_limit;
