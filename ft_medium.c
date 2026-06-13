@@ -6,7 +6,7 @@
 /*   By: framirez <framirez@student.42malaga.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/06/05 16:01:57 by framirez          #+#    #+#             */
-/*   Updated: 2026/06/13 11:59:34 by framirez         ###   ########.fr       */
+/*   Updated: 2026/06/13 16:37:19 by framirez         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,11 +17,14 @@ static t_node	*ft_find_min_node(t_node *stack)
 	t_node	*act_node;
 	t_node	*min_node;
 
-	act_node = stack->next;
-	min_node = stack;
+	act_node = stack;
+	while (act_node->index != 0)
+		act_node = act_node->next;
+	min_node = act_node;
+	act_node = act_node->next;
 	while (act_node != stack)
 	{
-		if (act_node->number < min_node->number && act_node->index != 0)
+		if (act_node->number < min_node->number && act_node->index == 0)
 			min_node = act_node;
 		act_node = act_node->next;
 	}
@@ -33,7 +36,7 @@ static void	index_assignment(t_data *data)
 	t_node	*act_node;
 
 	count = 1;
-	while (count < data->size_a)
+	while (count <= data->size_a)
 	{
 		act_node = ft_find_min_node(data->stack_a);
 		act_node->index = count;
@@ -71,15 +74,19 @@ static void	chunks_to_b(t_data *data)
 	int	index_limit;
 
 	index_assignment(data);
-	chunk_size = ft_sqrt(data->size_a) / 2;
+	chunk_size = ft_sqrt(data->size_a) * 2;
 	index_limit = chunk_size;
 	while (data->stack_a != NULL)
 	{
 		if (data->stack_a->index <= index_limit)
+		{
 			pb(data);
+			if (data->stack_b->index <= index_limit / 2)
+				rb(data);
+		}
 		else
 			ra(data);
-		if (data->size_b == index_limit)
+		if (data->size_b >= index_limit)
 			index_limit = index_limit + chunk_size;
 	}
 }
@@ -87,15 +94,15 @@ int	ft_medium(t_data *data)
 {
 	int	max_pos;
 
-	chunks_to_b(data);
 	if (data->size_a == 2)
 		return (sa(data), 0);
 	if (data->size_a == 3)
 		return (ft_sort_three(data), 0);
+	chunks_to_b(data);
 	while (data->stack_b != NULL)
 	{
 		max_pos = ft_find_max_pos(data->stack_b);
-		if (max_pos >= data->size_b / 2)
+		if (max_pos > data->size_b / 2)
 		{
 			while (max_pos++ < data->size_b)
 				rrb(data);

@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   push.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: rumartin <rumartin@student.42malaga.com>   +#+  +:+       +#+        */
+/*   By: framirez <framirez@student.42malaga.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/05/28 18:03:47 by framirez          #+#    #+#             */
-/*   Updated: 2026/06/02 23:39:51 by rumartin         ###   ########.fr       */
+/*   Updated: 2026/06/13 13:25:04 by framirez         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -63,6 +63,7 @@ int	pa(t_data *data)
 		data->size_a++;
 		data->size_b--;
 		write(1, "pa\n", 3);
+		data->op_count++;
 		return (1);
 	}
 	return (0);
@@ -75,6 +76,7 @@ int	pb(t_data *data)
 		data->size_a--;
 		data->size_b++;
 		write(1, "pb\n", 3);
+		data->op_count++;
 		return (1);
 	}
 	return (0);

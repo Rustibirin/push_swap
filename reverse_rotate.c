@@ -6,7 +6,7 @@
 /*   By: framirez <framirez@student.42malaga.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/05/28 13:13:48 by framirez          #+#    #+#             */
-/*   Updated: 2026/05/31 16:03:29 by framirez         ###   ########.fr       */
+/*   Updated: 2026/06/13 13:24:53 by framirez         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,6 +27,7 @@ int	rra(t_data *data)
 	if (reverse_rotate(&data->stack_a) == 1)
 	{
 		write(1, "rra\n", 4);
+		data->op_count++;
 		return (1);
 	}
 	return (0);
@@ -37,6 +38,7 @@ int	rrb(t_data *data)
 	if (reverse_rotate(&data->stack_b) == 1)
 	{
 		write(1, "rrb\n", 4);
+		data->op_count++;
 		return (1);
 	}
 	return (0);
@@ -52,5 +54,6 @@ int	rrr(t_data *data)
 	if (a == 0 && b == 0)
 		return (0);
 	write(1, "rrr\n", 4);
+	data->op_count++;
 	return (1);
 }
