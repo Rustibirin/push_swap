@@ -48,7 +48,7 @@ The algorithm implements a `chunk-based sorting` strategy. After assigning each 
 
 This strategy is particularly well-suited for circular doubly linked lists, as the rotation operations required to locate elements in each chunk are performed naturally due to the circularity of the structure. Furthermore, the double links allow for direct and reverse rotations to be performed with equal ease, reducing the number of moves needed to place each target element at the head of the stack.
 ### <span style="color: green"> Complex algorithm <O(*n* log *n*)></span>
-The algorithm implements a variant of `Quick sort adaptation with stack partitioning`. In each recursive call, an approximate pivot is selected using the median of the elements in the current subset, and the set is divided into two partitions using only swap and rotation operations between stacks A and B. Subsequently, the same procedure is applied recursively to both partitions.
+The algorithm implements a variant of `quick sort adaptation with stack partitioning`. In each recursive call, an approximate pivot is selected using the median of the elements in the current subset, and the set is divided into two partitions using only swap and rotation operations between stacks A and B. Subsequently, the same procedure is applied recursively to both partitions.
 
 This strategy is particularly well-suited for circular doubly linked lists, as the partitioning process can be performed through successive rotations without the need to swap arbitrary elements. The circularity facilitates traversing the entire structure during partitioning, while the double links allow rotations to be undone efficiently. Furthermore, using a median as the pivot promotes balanced partitions, bringing the algorithm’s behavior close to a time complexity of O(n log n).
 ### <span style="color: green"> Custom adaptative algorithm</span>
@@ -57,9 +57,15 @@ To implement the adaptive algorithm, we use a function that measures the degree 
 * **Medium disorder:** if 0.2  ≤ disorder < 0.5 runs the chunk-based sorting strategy (O(n √n)).
 * **Complex algorithm:** if disorder ≥ 0.5 runs the quick sort adaptation with stack partitioning method (O(n log n))
 ## <span style="color: orange"> Contributions </span>
+Push Swap was designed as a collaborative project, so dividing up tasks was essential for making efficient progress. Although both team members were involved in reviewing and validating the entire project, each member led the development of the following areas:
 | User       | files                                      |
 | -------    | ---------------------------                |
-| `rumartin`   | main, bench, parser, parser_utils, errors, ft_simple, ft_complex, ft_complex_utils                             |
+| `rumartin`   | main, bench, parser, parser_utils, errors, ft_simple, ft_complex, ft_complex_utils, ft_split, ft_split_utils                             |
 | `framirez`   | swap, rotate, reverse_rotate, push, ft_medium, ft_medium_utils                                                    |
 
 ## <span style="color: orange"> Resources </span>
+### <span style="color: green"> References</span>
+* **Peer-to-Peer Learning:**
+Collaborative discussions with fellow students provided valuable insights and enhanced understanding throughout the project.
+### <span style="color: green"> AI Usage</span>
+AI was used only to deepen our understanding of algorithmic concepts and sorting techniques. The project's architecture, logic, and implementation were designed and coded independently.
