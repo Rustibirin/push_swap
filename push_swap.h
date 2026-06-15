@@ -6,7 +6,7 @@
 /*   By: framirez <framirez@student.42malaga.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/05/26 21:58:20 by rumartin          #+#    #+#             */
-/*   Updated: 2026/06/15 16:07:50 by framirez         ###   ########.fr       */
+/*   Updated: 2026/06/15 17:12:35 by framirez         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -70,6 +70,7 @@ typedef struct s_data
 	size_t			rra_cnt;
 	size_t			rrb_cnt;
 	size_t			rrr_cnt;
+	size_t			total_moves;
 	char			**mtrx;
 	int				size_a;
 	int				size_b;
