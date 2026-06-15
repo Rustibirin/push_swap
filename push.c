@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   push.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: rumartin <rumartin@student.42malaga.com>   +#+  +:+       +#+        */
+/*   By: framirez <framirez@student.42malaga.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/05/28 18:03:47 by framirez          #+#    #+#             */
-/*   Updated: 2026/06/02 18:56:27 by rumartin         ###   ########.fr       */
+/*   Updated: 2026/06/15 16:08:53 by framirez         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -53,27 +53,31 @@ int	push(t_node **stack_src, t_node **stack_dest)
 		node->prev = last_dest;
 		*stack_dest = node;
 	}
-	return(1);
+	return (1);
 }
+
 int	pa(t_data *data)
 {
-	if(push(&data->stack_b, &data->stack_a) == 1)
+	if (push(&data->stack_b, &data->stack_a) == 1)
 	{
 		data->size_a++;
 		data->size_b--;
 		write(1, "pa\n", 3);
-		return(1);
+		data->pa_cnt++;
+		return (1);
 	}
-	return(0);
+	return (0);
 }
+
 int	pb(t_data *data)
 {
-	if(push(&data->stack_a, &data->stack_b) == 1)
+	if (push(&data->stack_a, &data->stack_b) == 1)
 	{
 		data->size_a--;
 		data->size_b++;
 		write(1, "pb\n", 3);
-		return(1);
+		data->pb_cnt++;
+		return (1);
 	}
-	return(0);
+	return (0);
 }

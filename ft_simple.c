@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_simple.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: rumartin <rumartin@student.42malaga.com>   +#+  +:+       +#+        */
+/*   By: framirez <framirez@student.42malaga.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/05/31 14:07:20 by rumartin          #+#    #+#             */
-/*   Updated: 2026/06/02 18:25:01 by rumartin         ###   ########.fr       */
+/*   Updated: 2026/06/12 15:16:51 by framirez         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,7 +36,7 @@ static	int	ft_find_min_pos(t_node *stack)
 	return (min_pos);
 }
 
-static	void	ft_sort_three(t_data *data)
+void	ft_sort_three(t_data *data)
 {
 	int	a;
 	int	b;
@@ -44,7 +44,7 @@ static	void	ft_sort_three(t_data *data)
 
 	a = data->stack_a->number;
 	b = data->stack_a->next->number;
-	c = data->stack_a->prev->number;
+	c = data->stack_a->next->next->number;
 	if (a < b && b < c)
 		return ;
 	if (a > b && b > c)
@@ -94,14 +94,3 @@ int	ft_simple(t_data *data)
 	return (0);
 }
 
-int	ft_medium(t_data *data)
-{
-	data->size_b = 2; //borrar
-	return (0);
-}
-
-int	ft_adaptive(t_data *data)
-{
-	data->size_b = 4; //borrar
-	return (0);
-}

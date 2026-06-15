@@ -6,13 +6,13 @@
 /*   By: rumartin <rumartin@student.42malaga.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/05/29 17:01:27 by rumartin          #+#    #+#             */
-/*   Updated: 2026/05/29 17:05:34 by rumartin         ###   ########.fr       */
+/*   Updated: 2026/06/03 11:43:09 by rumartin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-static	size_t	ft_strlen(const char *str)
+static	size_t	ft_strlen_split(const char *str)
 {
 	size_t	res;
 
@@ -48,7 +48,7 @@ static	size_t	ft_strlcpy(char *dest, const char *src, size_t dest_size)
 {
 	size_t	src_len;
 
-	src_len = ft_strlen(src);
+	src_len = ft_strlen_split(src);
 	if (dest_size == 0)
 		return (src_len);
 	if (src_len < dest_size)
@@ -66,7 +66,7 @@ static	char	*ft_strdup(const char *str)
 	char	*cp;
 	size_t	len;
 
-	len = ft_strlen(str);
+	len = ft_strlen_split(str);
 	cp = ft_calloc ((len + 1), sizeof(char));
 	if (!cp)
 		return (NULL);
@@ -81,7 +81,7 @@ char	*ft_substr(char const *s, unsigned int start, size_t len)
 
 	if (!s)
 		return (NULL);
-	s_len = ft_strlen(s);
+	s_len = ft_strlen_split(s);
 	if (start >= s_len)
 		return (ft_strdup(""));
 	if (len > s_len - start)
