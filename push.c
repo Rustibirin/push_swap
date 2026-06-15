@@ -6,7 +6,7 @@
 /*   By: framirez <framirez@student.42malaga.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/05/28 18:03:47 by framirez          #+#    #+#             */
-/*   Updated: 2026/06/13 13:25:04 by framirez         ###   ########.fr       */
+/*   Updated: 2026/06/15 16:08:53 by framirez         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -63,7 +63,7 @@ int	pa(t_data *data)
 		data->size_a++;
 		data->size_b--;
 		write(1, "pa\n", 3);
-		data->op_count++;
+		data->pa_cnt++;
 		return (1);
 	}
 	return (0);
@@ -76,7 +76,7 @@ int	pb(t_data *data)
 		data->size_a--;
 		data->size_b++;
 		write(1, "pb\n", 3);
-		data->op_count++;
+		data->pb_cnt++;
 		return (1);
 	}
 	return (0);
