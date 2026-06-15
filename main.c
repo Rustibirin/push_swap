@@ -6,7 +6,7 @@
 /*   By: rumartin <rumartin@student.42malaga.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/05/26 21:55:21 by rumartin          #+#    #+#             */
-/*   Updated: 2026/06/15 20:08:57 by rumartin         ###   ########.fr       */
+/*   Updated: 2026/06/15 20:37:00 by rumartin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -99,8 +99,9 @@ int	main(int argc, char **argv)
 		data->dis_index = ft_compute_disorder(data->stack_a);
 		ft_algorithms(data);
 	}
-	if (data->bench)
-		ft_bench(data);
+	if (data->size_a)
+		if (data->bench)
+			ft_bench(data);
 	return (ft_free_stack(&data->stack_a), ft_free_stack(&data->stack_b),
 		free(data), 0);
 }
