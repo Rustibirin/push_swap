@@ -6,7 +6,7 @@
 /*   By: rumartin <rumartin@student.42malaga.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/05/06 20:43:53 by rumartin          #+#    #+#             */
-/*   Updated: 2026/06/15 19:08:01 by rumartin         ###   ########.fr       */
+/*   Updated: 2026/06/15 19:21:14 by rumartin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,5 +28,6 @@ int		ft_putpointer(void *ptr);
 int		ft_putnbr(int n);
 int		ft_putunbr(unsigned int n);
 int		ft_puthex(int c, uintptr_t n);
+int		ft_putfloat(double number);
 
 #endif

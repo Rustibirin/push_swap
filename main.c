@@ -6,11 +6,12 @@
 /*   By: rumartin <rumartin@student.42malaga.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/05/26 21:55:21 by rumartin          #+#    #+#             */
-/*   Updated: 2026/06/03 15:58:29 by rumartin         ###   ########.fr       */
+/*   Updated: 2026/06/15 19:46:39 by rumartin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
+#include <stdio.h>
 
 static	void	ft_adaptive(t_data *data)
 {
@@ -58,7 +59,7 @@ static	double	ft_compute_disorder(t_node *stack)
 		}
 		node_i = node_i->next;
 	}
-	return ((double)mistakes / total_pairs);
+	return ((float) mistakes / total_pairs);
 }
 
 static	int	ft_sorted(t_node *stack)

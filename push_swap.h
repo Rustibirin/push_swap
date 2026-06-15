@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   push_swap.h                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: framirez <framirez@student.42malaga.com>   +#+  +:+       +#+        */
+/*   By: rumartin <rumartin@student.42malaga.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/05/26 21:58:20 by rumartin          #+#    #+#             */
-/*   Updated: 2026/06/15 17:12:35 by framirez         ###   ########.fr       */
+/*   Updated: 2026/06/15 19:34:14 by rumartin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
