@@ -6,7 +6,7 @@
 /*   By: rumartin <rumartin@student.42malaga.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/04/23 17:06:32 by rumartin          #+#    #+#             */
-/*   Updated: 2026/05/08 15:53:14 by rumartin         ###   ########.fr       */
+/*   Updated: 2026/06/15 19:08:06 by rumartin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,7 @@ int	ft_putstr(char *str)
 	size_t	len;
 
 	if (!str)
-		return (write(1, "(null)", 6));
+		return (write(2, "(null)", 6));
 	len = ft_strlen(str);
-	return (write(1, str, len));
+	return (write(2, str, len));
 }

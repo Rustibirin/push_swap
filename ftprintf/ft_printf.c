@@ -6,7 +6,7 @@
 /*   By: rumartin <rumartin@student.42malaga.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/05/06 21:08:54 by rumartin          #+#    #+#             */
-/*   Updated: 2026/05/09 23:19:42 by rumartin         ###   ########.fr       */
+/*   Updated: 2026/06/15 19:08:00 by rumartin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,8 +37,10 @@ static	int	ft_secretary(const char *format, va_list arguments)
 		bytes = ft_putunbr(va_arg(arguments, unsigned int));
 	else if (*format == 'x' || *format == 'X')
 		bytes = ft_puthex(*format, (uintptr_t) va_arg(arguments, unsigned int));
+	else if (*format == 'f')
+		bytes = ft_putfloat(va_arg(arguments, double));
 	else
-		bytes = write(1, format, 1);
+		bytes = write(2, format, 1);
 	if (bytes < 0)
 		return (-1);
 	return (bytes);

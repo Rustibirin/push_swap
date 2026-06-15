@@ -6,7 +6,7 @@
 /*   By: rumartin <rumartin@student.42malaga.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/05/07 11:16:46 by rumartin          #+#    #+#             */
-/*   Updated: 2026/05/08 13:38:15 by rumartin         ###   ########.fr       */
+/*   Updated: 2026/06/15 19:08:02 by rumartin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,5 +17,5 @@ int	ft_putchar(const int c)
 	char	ch;
 
 	ch = (char) c;
-	return (write(1, &ch, 1));
+	return (write(2, &ch, 1));
 }

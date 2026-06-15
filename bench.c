@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   bench.c                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: framirez <framirez@student.42malaga.com>   +#+  +:+       +#+        */
+/*   By: rumartin <rumartin@student.42malaga.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/05/26 21:55:21 by rumartin          #+#    #+#             */
-/*   Updated: 2026/06/15 16:37:00 by framirez         ###   ########.fr       */
+/*   Updated: 2026/06/15 17:33:02 by rumartin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -55,7 +55,7 @@ static void	ft_print_data(t_data *data)
 	ft_printf("El numero de nodos en el stack A es: %i\n", data->size_a);
 	ft_printf("El puntero al stack B es: %p\n", data->stack_b);
 	ft_printf("El numero de nodos en el stack B es: %i\n", data->size_b);
-	ft_printf("El indice de desorden es: %i.00%%\n", (int)data->dis_index);
+	ft_printf("El indice de desorden es: %f%%\n", (int)data->dis_index);
 }
 
 void	ft_bench(t_data *data)
