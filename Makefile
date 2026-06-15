@@ -3,10 +3,10 @@
 #                                                         :::      ::::::::    #
 #    Makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: rumartin <rumartin@student.42malaga.com>   +#+  +:+       +#+         #
+#    By: framirez <framirez@student.42malaga.com>   +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2026/06/03 10:51:14 by rumartin          #+#    #+#              #
-#    Updated: 2026/06/03 11:23:41 by rumartin         ###   ########.fr        #
+#    Updated: 2026/06/13 11:11:44 by framirez         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -21,7 +21,7 @@ PRINTF		= $(PRINTF_DIR)/libftprintf.a
 
 SRCS        = main.c errors.c ft_complex.c ft_complex_utils.c ft_simple.c \
 			  ft_split.c ft_split_utils.c parser.c parser_utils.c push.c \
-			  swap.c rotate.c reverse_rotate.c bench.c 
+			  swap.c rotate.c reverse_rotate.c bench.c ft_medium.c ft_medium_utils.c
 OBJS        = $(addprefix $(OBJS_DIR)/, $(SRCS:.c=.o))
 
 all: $(NAME)

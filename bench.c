@@ -3,16 +3,16 @@
 /*                                                        :::      ::::::::   */
 /*   bench.c                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: rumartin <rumartin@student.42malaga.com>   +#+  +:+       +#+        */
+/*   By: framirez <framirez@student.42malaga.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/05/26 21:55:21 by rumartin          #+#    #+#             */
-/*   Updated: 2026/06/03 16:14:07 by rumartin         ###   ########.fr       */
+/*   Updated: 2026/06/15 16:37:00 by framirez         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-static	void	ft_print_stack(t_node *stack)
+static void	ft_print_stack(t_node *stack)
 {
 	t_node	*first_node;
 	t_node	*act_node;
@@ -35,10 +35,10 @@ static	void	ft_print_stack(t_node *stack)
 		act_node = act_node->next;
 	}
 }
+#include <stdio.h>
 
-static	void	ft_print_data(t_data *data)
+static void	ft_print_data(t_data *data)
 {
-	#include <stdio.h>
 	char	*strategy_arr[4];
 	char	*bench_arr[2];
 
@@ -55,7 +55,7 @@ static	void	ft_print_data(t_data *data)
 	ft_printf("El numero de nodos en el stack A es: %i\n", data->size_a);
 	ft_printf("El puntero al stack B es: %p\n", data->stack_b);
 	ft_printf("El numero de nodos en el stack B es: %i\n", data->size_b);
-	ft_printf("El indice de desorden es: %i.00%%\n", data->dis_index);
+	ft_printf("El indice de desorden es: %i.00%%\n", (int)data->dis_index);
 }
 
 void	ft_bench(t_data *data)

@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_simple.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: rumartin <rumartin@student.42malaga.com>   +#+  +:+       +#+        */
+/*   By: framirez <framirez@student.42malaga.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/05/31 14:07:20 by rumartin          #+#    #+#             */
-/*   Updated: 2026/06/03 11:48:05 by rumartin         ###   ########.fr       */
+/*   Updated: 2026/06/12 15:16:51 by framirez         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -94,14 +94,3 @@ int	ft_simple(t_data *data)
 	return (0);
 }
 
-int	ft_medium(t_data *data)
-{
-	ft_printf("borrar %i\n", data->size_b);
-	return (0);
-}
-
-int	ft_adaptive(t_data *data)
-{
-	ft_printf("borrar %i\n", data->size_b);
-	return (0);
-}
