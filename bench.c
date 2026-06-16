@@ -6,7 +6,7 @@
 /*   By: rumartin <rumartin@student.42malaga.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/05/26 21:55:21 by rumartin          #+#    #+#             */
-/*   Updated: 2026/06/16 13:23:05 by rumartin         ###   ########.fr       */
+/*   Updated: 2026/06/16 13:26:43 by rumartin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -46,6 +46,7 @@ static void	ft_print_stack(t_node *stack)
 static void	ft_print_data(t_data *data)
 {
 	char	*strategy_arr[7];
+
 	strategy_arr[0] = "ADAPTIVE";
 	strategy_arr[1] = "SIMPLE / O(n2)";
 	strategy_arr[2] = "MEDIUM / O(n√n)";
