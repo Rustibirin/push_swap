@@ -6,7 +6,7 @@
 /*   By: rumartin <rumartin@student.42malaga.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/06/02 18:24:32 by rumartin          #+#    #+#             */
-/*   Updated: 2026/06/16 18:01:18 by rumartin         ###   ########.fr       */
+/*   Updated: 2026/06/16 18:26:11 by rumartin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,61 +41,61 @@ static	int	ft_get_middle(t_data *data, t_node *stack, int size)
 	return (middle);
 }
 
-static	int	ft_quicksort_b(t_data *data, int size)
+int	ft_quicksort_b(t_data *data, int size)
 {
 	t_complex_vars	c_vars;
 
 	if (size <= 2)
 		return (ft_sort_small_b(data, size), 0);
 	c_vars.middle = ft_get_middle(data, data->stack_b, size);
-	c_vars.rb_count = 0;
-	c_vars.pa_count = 0;
+	c_vars.rb_times = 0;
+	c_vars.pa_times = 0;
 	while (size)
 	{
 		if (data->stack_b->number >= c_vars.middle)
 		{
 			pa(data);
-			c_vars.pa_count++;
+			c_vars.pa_times++;
 		}
 		else
 		{
 			rb(data);
-			c_vars.rb_count++;
+			c_vars.rb_times++;
 		}
 		size--;
 	}
-	ft_rewind_b(data, c_vars.rb_count);
-	ft_quicksort_a(data, c_vars.pa_count);
-	ft_quicksort_b(data, c_vars.rb_count);
+	ft_rewind_b(data, c_vars.rb_times);
+	ft_quicksort_a(data, c_vars.pa_times);
+	ft_quicksort_b(data, c_vars.rb_times);
 	return (0);
 }
 
-static	int	ft_quicksort_a(t_data *data, int size)
+int	ft_quicksort_a(t_data *data, int size)
 {
 	t_complex_vars	c_vars;
 
 	if (size <= 2)
 		return (ft_sort_small_a(data, size), 0);
 	c_vars.middle = ft_get_middle(data, data->stack_a, size);
-	c_vars.ra_count = 0;
-	c_vars.pb_count = 0;
+	c_vars.ra_times = 0;
+	c_vars.pb_times = 0;
 	while (size)
 	{
 		if (data->stack_a->number < c_vars.middle)
 		{
 			pb(data);
-			c_vars.pb_count++;
+			c_vars.pb_times++;
 		}
 		else
 		{
 			ra(data);
-			c_vars.ra_count++;
+			c_vars.ra_times++;
 		}
 		size--;
 	}
-	ft_rewind_a(data, c_vars.ra_count);
-	ft_quicksort_a(data, c_vars.ra_count);
-	ft_quicksort_b(data, c_vars.pb_count);
+	ft_rewind_a(data, c_vars.ra_times);
+	ft_quicksort_a(data, c_vars.ra_times);
+	ft_quicksort_b(data, c_vars.pb_times);
 	return (0);
 }
 

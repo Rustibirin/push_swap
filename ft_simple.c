@@ -6,7 +6,7 @@
 /*   By: rumartin <rumartin@student.42malaga.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/05/31 14:07:20 by rumartin          #+#    #+#             */
-/*   Updated: 2026/06/16 18:01:15 by rumartin         ###   ########.fr       */
+/*   Updated: 2026/06/16 18:06:45 by rumartin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,8 +35,6 @@ static	int	ft_find_min_pos(t_node *stack)
 	}
 	return (min_pos);
 }
-
-
 
 int	ft_simple(t_data *data)
 {

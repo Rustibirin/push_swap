@@ -6,22 +6,22 @@
 /*   By: rumartin <rumartin@student.42malaga.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/06/03 09:28:52 by rumartin          #+#    #+#             */
-/*   Updated: 2026/06/16 18:01:19 by rumartin         ###   ########.fr       */
+/*   Updated: 2026/06/16 18:22:12 by rumartin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-int	ft_rewind_a(t_data *data, int ra_count)
+int	ft_rewind_a(t_data *data, int ra_times)
 {
-	while (ra_count--)
+	while (ra_times--)
 		rra(data);
 	return (0);
 }
 
-int	ft_rewind_b(t_data *data, int rb_count)
+int	ft_rewind_b(t_data *data, int rb_times)
 {
-	while (rb_count--)
+	while (rb_times--)
 		rrb(data);
 	return (0);
 }
