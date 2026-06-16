@@ -65,7 +65,7 @@ Push Swap was designed as a collaborative project, so dividing up tasks was esse
 | User       | files                                      |
 | -------    | ---------------------------                |
 | `rumartin`   | main, bench, parser, parser_utils, errors, ft_simple, ft_complex, ft_complex_utils, ft_split, ft_split_utils                             |
-| `framirez`   | swap, rotate, reverse_rotate, push, ft_medium, ft_medium_utils                                                    |
+| `framirez`   | swap, rotate, reverse_rotate, push, ft_medium, algorithms_utils                                                    |
 
 ## <span style="color: orange"> Resources </span>
 ### <span style="color: green"> References</span>
