@@ -6,7 +6,7 @@
 /*   By: rumartin <rumartin@student.42malaga.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/05/26 21:58:20 by rumartin          #+#    #+#             */
-/*   Updated: 2026/06/16 12:13:51 by rumartin         ###   ########.fr       */
+/*   Updated: 2026/06/16 12:56:48 by rumartin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -73,7 +73,7 @@ typedef struct s_data
 	size_t			rra_cnt;
 	size_t			rrb_cnt;
 	size_t			rrr_cnt;
-	size_t			total_moves;
+	size_t			total_ops;
 	char			**mtrx;
 	int				size_a;
 	int				size_b;
