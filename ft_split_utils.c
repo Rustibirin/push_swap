@@ -6,7 +6,7 @@
 /*   By: rumartin <rumartin@student.42malaga.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/05/29 17:01:27 by rumartin          #+#    #+#             */
-/*   Updated: 2026/06/03 11:43:09 by rumartin         ###   ########.fr       */
+/*   Updated: 2026/06/16 17:58:59 by rumartin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,7 +25,7 @@ static	size_t	ft_strlen_split(const char *str)
 	return (res);
 }
 
-void	*ft_memcpy(void *dest, const void *src, size_t n)
+static	void	*ft_memcpy(void *dest, const void *src, size_t n)
 {
 	unsigned char	*d;
 	unsigned char	*s;

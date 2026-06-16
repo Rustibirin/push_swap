@@ -6,7 +6,7 @@
 /*   By: rumartin <rumartin@student.42malaga.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/06/02 18:24:32 by rumartin          #+#    #+#             */
-/*   Updated: 2026/06/03 12:22:55 by rumartin         ###   ########.fr       */
+/*   Updated: 2026/06/16 18:01:18 by rumartin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,7 +41,7 @@ static	int	ft_get_middle(t_data *data, t_node *stack, int size)
 	return (middle);
 }
 
-int	ft_quicksort_b(t_data *data, int size)
+static	int	ft_quicksort_b(t_data *data, int size)
 {
 	t_complex_vars	c_vars;
 
@@ -70,7 +70,7 @@ int	ft_quicksort_b(t_data *data, int size)
 	return (0);
 }
 
-int	ft_quicksort_a(t_data *data, int size)
+static	int	ft_quicksort_a(t_data *data, int size)
 {
 	t_complex_vars	c_vars;
 

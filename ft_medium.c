@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_medium.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: framirez <framirez@student.42malaga.com>   +#+  +:+       +#+        */
+/*   By: rumartin <rumartin@student.42malaga.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/06/05 16:01:57 by framirez          #+#    #+#             */
-/*   Updated: 2026/06/16 12:45:33 by rumartin         ###   ########.fr       */
+/*   Updated: 2026/06/16 18:01:17 by rumartin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 

@@ -3,16 +3,16 @@
 /*                                                        :::      ::::::::   */
 /*   push.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: framirez <framirez@student.42malaga.com>   +#+  +:+       +#+        */
+/*   By: rumartin <rumartin@student.42malaga.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/05/28 18:03:47 by framirez          #+#    #+#             */
-/*   Updated: 2026/06/15 16:08:53 by framirez         ###   ########.fr       */
+/*   Updated: 2026/06/16 18:00:24 by rumartin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-t_node	*extract_node(t_node **stack_src)
+static	t_node	*extract_node(t_node **stack_src)
 {
 	t_node	*node;
 
@@ -30,7 +30,7 @@ t_node	*extract_node(t_node **stack_src)
 	return (node);
 }
 
-int	push(t_node **stack_src, t_node **stack_dest)
+static	int	push(t_node **stack_src, t_node **stack_dest)
 {
 	t_node	*node;
 	t_node	*last_dest;

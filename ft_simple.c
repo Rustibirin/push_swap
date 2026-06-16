@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_simple.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: framirez <framirez@student.42malaga.com>   +#+  +:+       +#+        */
+/*   By: rumartin <rumartin@student.42malaga.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/05/31 14:07:20 by rumartin          #+#    #+#             */
-/*   Updated: 2026/06/16 12:47:22 by rumartin         ###   ########.fr       */
+/*   Updated: 2026/06/16 18:01:15 by rumartin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,34 +36,7 @@ static	int	ft_find_min_pos(t_node *stack)
 	return (min_pos);
 }
 
-void	ft_sort_three(t_data *data)
-{
-	int	a;
-	int	b;
-	int	c;
 
-	a = data->stack_a->number;
-	b = data->stack_a->next->number;
-	c = data->stack_a->next->next->number;
-	if (a < b && b < c)
-		return ;
-	if (a > b && b > c)
-	{
-		sa(data);
-		rra(data);
-	}
-	else if (a > b && a > c && c > b)
-		ra(data);
-	else if (a < b && a > c)
-		rra(data);
-	else if (a > b && a < c && b < c)
-		sa(data);
-	else
-	{
-		sa(data);
-		ra(data);
-	}
-}
 
 int	ft_simple(t_data *data)
 {

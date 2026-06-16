@@ -3,16 +3,16 @@
 /*                                                        :::      ::::::::   */
 /*   swap.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: framirez <framirez@student.42malaga.com>   +#+  +:+       +#+        */
+/*   By: rumartin <rumartin@student.42malaga.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/05/27 21:37:35 by framirez          #+#    #+#             */
-/*   Updated: 2026/06/15 16:43:34 by framirez         ###   ########.fr       */
+/*   Updated: 2026/06/16 18:00:55 by rumartin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-int	swap(t_node **stack)
+static	int	swap(t_node **stack)
 {
 	t_node	*a;
 	t_node	*b;

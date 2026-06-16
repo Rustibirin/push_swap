@@ -3,16 +3,16 @@
 /*                                                        :::      ::::::::   */
 /*   reverse_rotate.c                                   :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: framirez <framirez@student.42malaga.com>   +#+  +:+       +#+        */
+/*   By: rumartin <rumartin@student.42malaga.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/05/28 13:13:48 by framirez          #+#    #+#             */
-/*   Updated: 2026/06/15 16:49:24 by framirez         ###   ########.fr       */
+/*   Updated: 2026/06/16 18:00:36 by rumartin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-int	reverse_rotate(t_node **stack)
+static	int	reverse_rotate(t_node **stack)
 {
 	if (stack != NULL && *stack != NULL && (*stack)->next != *stack)
 	{
