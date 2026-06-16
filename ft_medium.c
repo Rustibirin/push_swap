@@ -6,7 +6,7 @@
 /*   By: framirez <framirez@student.42malaga.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/06/05 16:01:57 by framirez          #+#    #+#             */
-/*   Updated: 2026/06/13 16:38:57 by framirez         ###   ########.fr       */
+/*   Updated: 2026/06/16 12:45:33 by rumartin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,6 +30,7 @@ static t_node	*ft_find_min_node(t_node *stack)
 	}
 	return (min_node);
 }
+
 static void	index_assignment(t_data *data)
 {
 	int		count;
@@ -68,6 +69,7 @@ static int	ft_find_max_pos(t_node *stack)
 	}
 	return (max_pos);
 }
+
 static void	chunks_to_b(t_data *data)
 {
 	int	chunk_size;
@@ -90,6 +92,7 @@ static void	chunks_to_b(t_data *data)
 			index_limit = index_limit + chunk_size;
 	}
 }
+
 int	ft_medium(t_data *data)
 {
 	int	max_pos;

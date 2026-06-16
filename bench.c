@@ -6,7 +6,7 @@
 /*   By: rumartin <rumartin@student.42malaga.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/05/26 21:55:21 by rumartin          #+#    #+#             */
-/*   Updated: 2026/06/16 12:16:01 by rumartin         ###   ########.fr       */
+/*   Updated: 2026/06/16 12:44:56 by rumartin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,7 +35,6 @@
 		act_node = act_node->next;
 	}
 }*/
-#include <stdio.h>
 
 static void	ft_print_data(t_data *data)
 {
@@ -55,7 +54,6 @@ static void	ft_print_data(t_data *data)
 	ft_printf("[bench] ra: %i rb: %i rr: %i rra: %i rrb: %i rrr: %i\n",
 		data->ra_cnt, data->rb_cnt, data->rr_cnt, data->rra_cnt, data->rrb_cnt,
 		data->rrr_cnt);
-
 }
 
 void	ft_bench(t_data *data)

@@ -6,7 +6,7 @@
 /*   By: rumartin <rumartin@student.42malaga.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/06/15 17:34:47 by rumartin          #+#    #+#             */
-/*   Updated: 2026/06/15 19:51:19 by rumartin         ###   ########.fr       */
+/*   Updated: 2026/06/16 12:48:02 by rumartin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,5 +30,5 @@ int	ft_putfloat(double number)
 		bytes += ft_putchar('.');
 		bytes += ft_putunbr(result % 100);
 	}
-	return(bytes);
+	return (bytes);
 }
