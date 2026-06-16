@@ -6,7 +6,7 @@
 /*   By: rumartin <rumartin@student.42malaga.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/05/26 21:58:20 by rumartin          #+#    #+#             */
-/*   Updated: 2026/06/16 18:57:21 by rumartin         ###   ########.fr       */
+/*   Updated: 2026/06/16 21:38:27 by rumartin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -115,8 +115,11 @@ void				*ft_free_mtrx(char **mtrx);
 void				*ft_calloc(size_t count, size_t size);
 void				ft_free_stack(t_node **stack);
 void				ft_bench(t_data *data);
+void				ft_bench_bk(t_data *data); // BORRAR!!!
 void				ft_free_and_exit(t_data *data);
 void				ft_sort_three(t_data *data);
 void				ft_fill_array(t_node *stack, int *arr, int size);
+void				ft_min_extraction(t_data *data);
+void				ft_sort_puppy(t_data *data);
 
 #endif

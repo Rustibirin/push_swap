@@ -6,13 +6,13 @@
 /*   By: rumartin <rumartin@student.42malaga.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/06/05 16:01:57 by framirez          #+#    #+#             */
-/*   Updated: 2026/06/16 18:01:17 by rumartin         ###   ########.fr       */
+/*   Updated: 2026/06/16 21:33:01 by rumartin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-static t_node	*ft_find_min_node(t_node *stack)
+t_node	*ft_find_min_node(t_node *stack)
 {
 	t_node	*act_node;
 	t_node	*min_node;
@@ -31,7 +31,7 @@ static t_node	*ft_find_min_node(t_node *stack)
 	return (min_node);
 }
 
-static void	index_assignment(t_data *data)
+static	void	ft_index_assignment(t_data *data)
 {
 	int		count;
 	t_node	*act_node;
@@ -75,7 +75,7 @@ static void	chunks_to_b(t_data *data)
 	int	chunk_size;
 	int	index_limit;
 
-	index_assignment(data);
+	ft_index_assignment(data);
 	chunk_size = (double)ft_sqrt(data->size_a) * 1.4;
 	index_limit = chunk_size;
 	while (data->stack_a != NULL)
@@ -99,8 +99,8 @@ int	ft_medium(t_data *data)
 
 	if (data->size_a == 2)
 		return (sa(data), 0);
-	if (data->size_a == 3)
-		return (ft_sort_three(data), 0);
+	if (data->size_a < 10)
+		return (ft_sort_puppy(data), 0);
 	chunks_to_b(data);
 	while (data->stack_b != NULL)
 	{

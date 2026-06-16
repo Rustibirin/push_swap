@@ -6,7 +6,7 @@
 /*   By: rumartin <rumartin@student.42malaga.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/06/15 17:34:47 by rumartin          #+#    #+#             */
-/*   Updated: 2026/06/16 12:48:02 by rumartin         ###   ########.fr       */
+/*   Updated: 2026/06/16 20:30:47 by rumartin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,7 @@ int	ft_putfloat(double number)
 
 	bytes = 0;
 	if (number == 1)
-		return (write (2, "1.00", 4));
+		return (write (2, "100.00", 6));
 	else if (number == 0)
 		return (write (2, "0.00", 4));
 	else
