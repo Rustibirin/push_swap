@@ -6,7 +6,7 @@
 /*   By: rumartin <rumartin@student.42malaga.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/05/26 21:55:21 by rumartin          #+#    #+#             */
-/*   Updated: 2026/06/15 20:37:00 by rumartin         ###   ########.fr       */
+/*   Updated: 2026/06/16 12:15:57 by rumartin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,16 +16,19 @@
 static	void	ft_adaptive(t_data *data)
 {
 	if (data->dis_index < 0.2)
+	{
 		ft_simple(data);
+		data->strategy = ADAPTIVE_SIMPLE;
+	}
 	else if (data->dis_index >= 0.2 && data->dis_index < 0.5)
 	{
 		ft_medium(data);
-		data->strategy = 4;
+		data->strategy = ADAPTIVE_MEDIUM;
 	}
 	else if (data->dis_index >= 0.5)
 	{
 		ft_complex(data);
-		data->strategy = 5;
+		data->strategy = ADAPTIVE_COMPLEX;
 	}
 }
 
@@ -65,7 +68,7 @@ static	double	ft_compute_disorder(t_node *stack)
 		}
 		node_i = node_i->next;
 	}
-	return ((float) mistakes / total_pairs);
+	return ((double) mistakes / total_pairs);
 }
 
 static	int	ft_sorted(t_node *stack)
@@ -92,7 +95,10 @@ int	main(int argc, char **argv)
 		return (0);
 	data = ft_calloc(1, sizeof(t_data));
 	if (!data)
-		return (write(2, "Error\n", 6), 1);
+	{
+		write(2, "Error\n", 6);
+		return (1);
+	}
 	ft_args_checker(argv, data);
 	if (!ft_sorted(data->stack_a))
 	{

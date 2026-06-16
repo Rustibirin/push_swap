@@ -6,7 +6,7 @@
 /*   By: rumartin <rumartin@student.42malaga.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/05/26 21:58:20 by rumartin          #+#    #+#             */
-/*   Updated: 2026/06/15 20:11:46 by rumartin         ###   ########.fr       */
+/*   Updated: 2026/06/16 12:13:51 by rumartin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,10 +33,13 @@ typedef struct s_vars
 
 typedef enum e_strategy
 {
+	ADAPTIVE,
 	SIMPLE,
 	MEDIUM,
 	COMPLEX,
-	ADAPTIVE
+	ADAPTIVE_SIMPLE,
+	ADAPTIVE_MEDIUM,
+	ADAPTIVE_COMPLEX
 }					t_strategy;
 
 typedef enum e_bench
@@ -74,6 +77,8 @@ typedef struct s_data
 	char			**mtrx;
 	int				size_a;
 	int				size_b;
+	int				rep_strategy;
+	int				rep_bench;		
 	double			dis_index;
 }					t_data;
 

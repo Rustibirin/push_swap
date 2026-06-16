@@ -6,7 +6,7 @@
 /*   By: rumartin <rumartin@student.42malaga.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/05/27 16:27:26 by rumartin          #+#    #+#             */
-/*   Updated: 2026/06/03 12:25:38 by rumartin         ###   ########.fr       */
+/*   Updated: 2026/06/16 12:38:18 by rumartin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -52,16 +52,16 @@ static	int	ft_valid_num(char *str)
 
 static	int	ft_detect_flag(char *str, t_data *data)
 {
-	if (str && (ft_strncmp(str, "--simple", 9) == 0))
-		return (data->strategy = SIMPLE, 0);
-	if (str && (ft_strncmp(str, "--medium", 9) == 0))
-		return (data->strategy = MEDIUM, 0);
-	if (str && (ft_strncmp(str, "--complex", 10) == 0))
-		return (data->strategy = COMPLEX, 0);
 	if (str && (ft_strncmp(str, "--adaptive", 11) == 0))
-		return (data->strategy = ADAPTIVE, 0);
+		return (data->rep_strategy += 1, data->strategy = ADAPTIVE, 0);
+	if (str && (ft_strncmp(str, "--simple", 9) == 0))
+		return (data->rep_strategy += 1, data->strategy = SIMPLE, 0);
+	if (str && (ft_strncmp(str, "--medium", 9) == 0))
+		return (data->rep_strategy += 1, data->strategy = MEDIUM, 0);
+	if (str && (ft_strncmp(str, "--complex", 10) == 0))
+		return (data->rep_strategy += 1, data->strategy = COMPLEX, 0);
 	if (str && (ft_strncmp(str, "--bench", 8) == 0))
-		return (data->bench = YES, 0);
+		return (data->rep_bench += 1, data->bench = YES, 0);
 	return (1);
 }
 
@@ -83,6 +83,8 @@ static	int	ft_fill_stack(char *str, t_data *data)
 		if (ft_stack_add_back(&data->stack_a, &data->size_a, number))
 			return (1);
 	}
+	if (data->rep_strategy > 1  || data->rep_bench > 1)
+			return (1);
 	return (0);
 }
 
@@ -90,10 +92,9 @@ void	ft_args_checker(char **argv, t_data *data)
 {
 	int		i;
 	int		j;
-	int		fail_mtrx;
+	int		fail_fill;
 
 	data->bench = NO;
-	data->strategy = ADAPTIVE;
 	i = 1;
 	while (argv[i])
 	{
@@ -103,8 +104,8 @@ void	ft_args_checker(char **argv, t_data *data)
 		j = 0;
 		while (data->mtrx[j])
 		{
-			fail_mtrx = ft_fill_stack(data->mtrx[j++], data);
-			if (fail_mtrx)
+			fail_fill = ft_fill_stack(data->mtrx[j++], data);
+			if (fail_fill)
 			{
 				ft_free_and_exit(data);
 				return ;

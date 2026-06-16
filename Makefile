@@ -3,16 +3,16 @@
 #                                                         :::      ::::::::    #
 #    Makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: framirez <framirez@student.42malaga.com>   +#+  +:+       +#+         #
+#    By: rumartin <rumartin@student.42malaga.com>   +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2026/06/03 10:51:14 by rumartin          #+#    #+#              #
-#    Updated: 2026/06/13 11:11:44 by framirez         ###   ########.fr        #
+#    Updated: 2026/06/16 12:25:52 by rumartin         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 NAME        = push_swap
 CC          = cc
-CFLAGS      = -Wall -Wextra -Werror
+CFLAGS      = -Wall -Wextra -Werror -g
 RM          = rm -rf
 MKDIR       = mkdir -p
 OBJS_DIR    = obj
