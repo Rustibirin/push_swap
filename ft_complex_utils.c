@@ -6,7 +6,7 @@
 /*   By: rumartin <rumartin@student.42malaga.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/06/03 09:28:52 by rumartin          #+#    #+#             */
-/*   Updated: 2026/06/17 20:17:19 by rumartin         ###   ########.fr       */
+/*   Updated: 2026/06/17 20:19:29 by rumartin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -54,7 +54,7 @@ int	ft_rewind_b(t_data *data, int rb_times)
 	return (0);
 }
 
-int	ft_sort_small_a(t_data *data, int size)
+int	ft_sort_break_a(t_data *data, int size)
 {
 	if (size == 2)
 		if (data->stack_a->number > data->stack_a->next->number)
@@ -62,7 +62,7 @@ int	ft_sort_small_a(t_data *data, int size)
 	return (0);
 }
 
-int	ft_sort_small_b(t_data *data, int size)
+int	ft_sort_break_b(t_data *data, int size)
 {
 	if (size == 0)
 		return (0);

@@ -6,7 +6,7 @@
 /*   By: rumartin <rumartin@student.42malaga.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/06/02 18:24:32 by rumartin          #+#    #+#             */
-/*   Updated: 2026/06/17 17:40:13 by rumartin         ###   ########.fr       */
+/*   Updated: 2026/06/17 20:19:27 by rumartin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -46,7 +46,7 @@ int	ft_quicksort_b(t_data *data, int size)
 	t_complex_vars	c_vars;
 
 	if (size <= 2)
-		return (ft_sort_small_b(data, size), 0);
+		return (ft_sort_break_b(data, size), 0);
 	c_vars.middle = ft_get_middle(data, data->stack_b, size);
 	c_vars.rb_times = 0;
 	c_vars.pa_times = 0;
@@ -75,7 +75,7 @@ int	ft_quicksort_a(t_data *data, int size)
 	t_complex_vars	c_vars;
 
 	if (size <= 2)
-		return (ft_sort_small_a(data, size), 0);
+		return (ft_sort_break_a(data, size), 0);
 	c_vars.middle = ft_get_middle(data, data->stack_a, size);
 	c_vars.ra_times = 0;
 	c_vars.pb_times = 0;
