@@ -6,14 +6,14 @@
 #    By: rumartin <rumartin@student.42malaga.com>   +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2026/06/03 10:51:14 by rumartin          #+#    #+#              #
-#    Updated: 2026/06/16 20:22:17 by rumartin         ###   ########.fr        #
+#    Updated: 2026/06/17 12:10:08 by rumartin         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 NAME        	= push_swap
 HEADER			= push_swap.h
 CC          	= cc
-CFLAGS      	= -Wall -Wextra -Werror -g
+CFLAGS      	= -Wall -Wextra -Werror
 RM          	= rm -rf
 MKDIR       	= mkdir -p
 OBJS_DIR    	= obj
@@ -23,7 +23,7 @@ PRINTF			= $(PRINTF_DIR)/libftprintf.a
 SRCS        	= main.c errors.c ft_complex.c ft_complex_utils.c ft_simple.c \
 	      		ft_split.c ft_split_utils.c parser.c parser_utils.c push.c \
 	      		swap.c rotate.c reverse_rotate.c bench.c ft_medium.c \
-	      		algorithms_utils.c bench_bk.c
+	      		algorithms_utils.c
 	      
 OBJS        	= $(addprefix $(OBJS_DIR)/, $(SRCS:.c=.o))
 

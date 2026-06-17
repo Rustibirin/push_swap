@@ -6,12 +6,11 @@
 /*   By: rumartin <rumartin@student.42malaga.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/06/15 17:34:47 by rumartin          #+#    #+#             */
-/*   Updated: 2026/06/16 20:30:47 by rumartin         ###   ########.fr       */
+/*   Updated: 2026/06/17 12:09:28 by rumartin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
-#include <stdio.h>
 
 int	ft_putfloat(double number)
 {

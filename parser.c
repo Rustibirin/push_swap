@@ -6,7 +6,7 @@
 /*   By: rumartin <rumartin@student.42malaga.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/05/27 16:27:26 by rumartin          #+#    #+#             */
-/*   Updated: 2026/06/16 18:01:11 by rumartin         ###   ########.fr       */
+/*   Updated: 2026/06/17 11:47:15 by rumartin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -104,12 +104,13 @@ void	ft_args_checker(char **argv, t_data *data)
 		j = 0;
 		while (data->mtrx[j])
 		{
-			fail_fill = ft_fill_stack(data->mtrx[j++], data);
+			fail_fill = ft_fill_stack(data->mtrx[j], data);
 			if (fail_fill)
 			{
 				ft_free_and_exit(data);
 				return ;
 			}
+			j++;
 		}
 		ft_free_mtrx(data->mtrx);
 		i++;
