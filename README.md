@@ -64,8 +64,8 @@ To implement the adaptive algorithm, we use a function that measures the degree 
 Push Swap was designed as a collaborative project, so dividing up tasks was essential for making efficient progress. Although both team members were involved in reviewing and validating the entire project, each member led the development of the following areas:
 | User       | files                                      |
 | -------    | ---------------------------                |
-| `rumartin`   | main, bench, parser, parser_utils, errors, ft_simple, ft_complex, ft_complex_utils, ft_split, ft_split_utils                             |
-| `framirez`   | swap, rotate, reverse_rotate, push, ft_medium, algorithms_utils                                                    |
+| `rumartin` | main.c, bench.c, parser.c, parser_utils.c, errors.c, ft_simple.c, ft_complex.c, ft_complex_utils.c, ft_split.c, ft_split_utils.c, Makefile                                                  |
+| `framirez` | swap.c, rotate.c, reverse_rotate.c, push.c, ft_medium.c, algorithms_utils.c, push_swap.h                                                         |
 
 ## <span style="color: orange"> Resources </span>
 ### <span style="color: green"> References</span>
