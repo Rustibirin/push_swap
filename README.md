@@ -38,6 +38,26 @@ Example:
 ./push_swap 8 2 5 1 3
 ```
 The program will output the sequence of operations required to sort the numbers according to the program specifications.
+
+The program includes a benchmark mode that displays data on the stack disorder index, the selected sorting strategy, the total number of operations, and a count of the number of times each type of operation was used. For calling it, use:
+```Bash
+./push_swap --bench <list _of_integers>
+```
+
+
+* For the O(*n*²):
+```Bash
+./push_swap --simple <list _of_integers>
+```
+* For the O(*n* √*n*):
+```Bash
+./push_swap --medium <list _of_integers>
+```
+* For the O(*n* log *n*):
+```Bash
+./push_swap --complex <list _of_integers>
+```
+
 ## <span style="color: orange"> Algorithms </span>
 After studying and evaluating the different approaches to this project, we decided to work with circular doubly linked lists, keeping the following advantages in mind:
 * **Efficient rotations (ra, rb, rra, rrb)**: Since the list is circular, rotating the stack forward or backward only requires updating the head pointer, without traversing the entire list.
