@@ -6,21 +6,21 @@
 /*   By: rumartin <rumartin@student.42malaga.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/05/26 21:58:20 by rumartin          #+#    #+#             */
-/*   Updated: 2026/06/17 12:24:49 by rumartin         ###   ########.fr       */
+/*   Updated: 2026/06/17 14:32:20 by rumartin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef PUSH_SWAP_H
 # define PUSH_SWAP_H
 
-// Libraries
+	// Libraries
 
 # include "ftprintf/ft_printf.h"
 # include <limits.h>
 # include <stdlib.h>
 # include <unistd.h>
 
-// Structures
+	// Structures
 
 typedef struct s_vars
 {
@@ -82,7 +82,7 @@ typedef struct s_data
 	double			dis_index;
 }					t_data;
 
-// Prototypes
+	// Prototypes
 
 // parser.c
 
