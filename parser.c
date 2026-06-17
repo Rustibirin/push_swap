@@ -6,7 +6,7 @@
 /*   By: rumartin <rumartin@student.42malaga.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/05/27 16:27:26 by rumartin          #+#    #+#             */
-/*   Updated: 2026/06/17 11:47:15 by rumartin         ###   ########.fr       */
+/*   Updated: 2026/06/17 13:09:02 by rumartin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -94,7 +94,6 @@ void	ft_args_checker(char **argv, t_data *data)
 	int		j;
 	int		fail_fill;
 
-	data->bench = NO;
 	i = 1;
 	while (argv[i])
 	{
