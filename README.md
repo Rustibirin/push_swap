@@ -1,5 +1,5 @@
 *This project has been created as part of the 42 curriculum by rumartin and framirez.*
-# **PUSH_SWAP**
+# PUSH_SWAP - @42Malaga <img align="right" src="https://img.shields.io/badge/Lenguaje-C-green?style=for-the-badge&logo=c" alt="Lenguaje C">
 ## <span style="color: orange"> Description </span>
 The push_swap project serves as an initial exploration of the underlying logic behind algorithms. The objective was to write a program capable of sorting data stored in a stack, using an empty auxiliary stack, a limited set of possible instructions, and optimizing the total number of operations required for the sort. The program uses three sorting algorithms of varying complexity and is capable of selecting the most appropriate one based on the degree of disorder in the initial stack. It also counts withe a benchmark mode which displays the following information after sorting:
 * The computed disorder.
