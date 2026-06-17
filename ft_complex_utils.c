@@ -6,7 +6,7 @@
 /*   By: rumartin <rumartin@student.42malaga.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/06/03 09:28:52 by rumartin          #+#    #+#             */
-/*   Updated: 2026/06/16 18:22:12 by rumartin         ###   ########.fr       */
+/*   Updated: 2026/06/17 17:46:13 by rumartin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,15 +14,35 @@
 
 int	ft_rewind_a(t_data *data, int ra_times)
 {
-	while (ra_times--)
-		rra(data);
+	if (ra_times > (data->size_a / 2))
+		while (ra_times != data->size_a)
+		{
+			ra(data);
+			ra_times++;
+		}
+	else
+		while (ra_times)
+		{
+			rra(data);
+			ra_times--;
+		}
 	return (0);
 }
 
 int	ft_rewind_b(t_data *data, int rb_times)
 {
-	while (rb_times--)
-		rrb(data);
+	if (rb_times > (data->size_b / 2))
+		while (rb_times != data->size_b)
+		{
+			rb(data);
+			rb_times++;
+		}
+	else
+		while (rb_times)
+		{
+			rrb(data);
+			rb_times--;
+		}
 	return (0);
 }
 

@@ -6,7 +6,7 @@
 /*   By: rumartin <rumartin@student.42malaga.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/06/05 16:01:57 by framirez          #+#    #+#             */
-/*   Updated: 2026/06/17 15:45:52 by rumartin         ###   ########.fr       */
+/*   Updated: 2026/06/17 17:53:59 by rumartin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -76,16 +76,12 @@ static void	chunks_to_b(t_data *data)
 	int	index_limit;
 
 	ft_index_assignment(data);
-	chunk_size = (double)ft_sqrt(data->size_a) * 1.4;
+	chunk_size = (float) ft_sqrt(data->size_a) / 1.5;
 	index_limit = chunk_size;
 	while (data->stack_a != NULL)
 	{
 		if (data->stack_a->index <= index_limit)
-		{
 			pb(data);
-			if (data->stack_b->index <= index_limit / 2)
-				rb(data);
-		}
 		else
 			ra(data);
 		if (data->size_b >= index_limit)

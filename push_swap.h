@@ -6,7 +6,7 @@
 /*   By: rumartin <rumartin@student.42malaga.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/05/26 21:58:20 by rumartin          #+#    #+#             */
-/*   Updated: 2026/06/17 14:32:20 by rumartin         ###   ########.fr       */
+/*   Updated: 2026/06/17 17:54:23 by rumartin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -120,7 +120,7 @@ int					ft_quicksort_b(t_data *data, int size);
 
 // complex_utils.c
 
-int					ft_rewind_a(t_data *data, int ra_count);
+int					ft_rewind_a(t_data *data, int ra_times);
 int					ft_rewind_b(t_data *data, int rb_count);
 int					ft_sort_small_a(t_data *data, int size);
 int					ft_sort_small_b(t_data *data, int size);
