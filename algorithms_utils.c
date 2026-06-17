@@ -6,7 +6,7 @@
 /*   By: rumartin <rumartin@student.42malaga.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/06/05 18:55:21 by framirez          #+#    #+#             */
-/*   Updated: 2026/06/16 21:40:42 by rumartin         ###   ########.fr       */
+/*   Updated: 2026/06/17 12:26:13 by rumartin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,17 +41,17 @@ void	ft_min_extraction(t_data *data)
 	int	min_pos;
 
 	min_pos = ft_find_min_pos(data->stack_a);
-		if (min_pos <= (data->size_a / 2))
-		{
-			while (min_pos--)
-				ra(data);
-		}
-		else
-		{
-			while (min_pos++ < data->size_a)
-				rra(data);
-		}
-		pb(data);
+	if (min_pos <= (data->size_a / 2))
+	{
+		while (min_pos--)
+			ra(data);
+	}
+	else
+	{
+		while (min_pos++ < data->size_a)
+			rra(data);
+	}
+	pb(data);
 }
 
 void	ft_sort_puppy(t_data *data)

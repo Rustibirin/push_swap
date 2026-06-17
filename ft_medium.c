@@ -6,13 +6,13 @@
 /*   By: rumartin <rumartin@student.42malaga.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/06/05 16:01:57 by framirez          #+#    #+#             */
-/*   Updated: 2026/06/16 21:33:01 by rumartin         ###   ########.fr       */
+/*   Updated: 2026/06/17 12:22:04 by rumartin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-t_node	*ft_find_min_node(t_node *stack)
+static	t_node	*ft_find_min_node(t_node *stack)
 {
 	t_node	*act_node;
 	t_node	*min_node;
