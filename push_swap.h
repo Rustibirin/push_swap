@@ -6,7 +6,7 @@
 /*   By: rumartin <rumartin@student.42malaga.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/05/26 21:58:20 by rumartin          #+#    #+#             */
-/*   Updated: 2026/06/17 20:19:25 by rumartin         ###   ########.fr       */
+/*   Updated: 2026/06/18 13:27:59 by rumartin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -78,7 +78,9 @@ typedef struct s_data
 	int				size_a;
 	int				size_b;
 	int				rep_strategy;
-	int				rep_bench;		
+	int				rep_bench;	
+	int				rep_total_opers;
+	int				flag_total_opers;	
 	double			dis_index;
 }					t_data;
 
@@ -159,6 +161,7 @@ int					rrr(t_data *data);
 // bench.c
 
 void				ft_bench(t_data *data);
+void				ft_total_ops(t_data *data);
 
 // errors.c
 

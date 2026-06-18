@@ -6,7 +6,7 @@
 /*   By: rumartin <rumartin@student.42malaga.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/05/28 13:13:48 by framirez          #+#    #+#             */
-/*   Updated: 2026/06/16 18:00:36 by rumartin         ###   ########.fr       */
+/*   Updated: 2026/06/18 13:33:02 by rumartin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,7 +26,8 @@ int	rra(t_data *data)
 {
 	if (reverse_rotate(&data->stack_a) == 1)
 	{
-		write(1, "rra\n", 4);
+		if (data->flag_total_opers == 0)
+			write(1, "rra\n", 4);
 		data->rra_cnt++;
 		return (1);
 	}
@@ -37,7 +38,8 @@ int	rrb(t_data *data)
 {
 	if (reverse_rotate(&data->stack_b) == 1)
 	{
-		write(1, "rrb\n", 4);
+		if (data->flag_total_opers == 0)
+			write(1, "rrb\n", 4);
 		data->rrb_cnt++;
 		return (1);
 	}
@@ -53,7 +55,8 @@ int	rrr(t_data *data)
 	b = reverse_rotate(&data->stack_b);
 	if (a == 0 && b == 0)
 		return (0);
-	write(1, "rrr\n", 4);
+	if (data->flag_total_opers == 0)
+		write(1, "rrr\n", 4);
 	data->rrr_cnt++;
 	return (1);
 }

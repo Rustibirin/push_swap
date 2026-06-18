@@ -6,13 +6,13 @@
 /*   By: rumartin <rumartin@student.42malaga.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/05/26 21:55:21 by rumartin          #+#    #+#             */
-/*   Updated: 2026/06/16 17:35:40 by rumartin         ###   ########.fr       */
+/*   Updated: 2026/06/18 13:29:52 by rumartin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-static	void	ft_total_ops(t_data *data)
+void	ft_total_ops(t_data *data)
 {
 	data->total_ops = data->sa_cnt + data->sb_cnt + data->ss_cnt
 		+ data->pa_cnt + data->pb_cnt + data->ra_cnt + data->rb_cnt
